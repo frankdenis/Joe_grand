@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Dashboard — Joe Grand</title>
+<link rel="icon" href="../assets/favicon.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="top-nav" style="position:sticky;top:0;z-index:70">
+  <div class="inner" style="padding:8px 18px">
+    <a class="brand" href="../index.html"><span class="brand-dot" style="background:var(--yellow)"></span><span>JOE GRAND <b style="color:var(--yellow)">• ADMIN</b></span></a>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span id="adminUser" class="user-chip" style="background:#1a1a1a;border-color:#333"></span>
+      <a class="btn" href="../index.html" style="font-size:10px">View site</a>
+      <button class="btn btn--pink" data-logout style="font-size:10px">Sign out</button>
+    </div>
+  </div>
+</nav>
+
+<div class="admin-layout">
+  <aside class="admin-nav">
+    <a href="#" data-tab="overview" class="active">📊 Overview</a>
+    <a href="#" data-tab="users">👥 Users</a>
+    <a href="#" data-tab="content">🗂 Content</a>
+    <a href="#" data-tab="media">🖼 Media</a>
+    <a href="#" data-tab="analytics">📈 Analytics</a>
+    <a href="#" data-tab="settings">⚙ Settings</a>
+    <div style="padding:12px 18px;margin-top:12px;border-top:1px solid #222;font-family:Courier Prime,monospace;font-size:10px;color:#666">
+      Unlimited access • All data in localStorage<br>
+      <span id="adminBuild">Build v1</span>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <!-- OVERVIEW -->
+    <section id="tab-overview">
+      <h2 style="font-family:Anton,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-size:22px">Overview</h2>
+      <p style="font-family:Courier Prime,monospace;color:#777;font-size:11px;margin-top:4px">Real-time snapshot — connected to auth & site data</p>
+      <div class="admin-stat-grid" style="margin-top:14px">
+        <div class="admin-stat"><span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#666">Total Users</span><strong id="statUsers">—</strong><span style="font-size:11px;color:#0a4b2e">▲ live from localStorage</span></div>
+        <div class="admin-stat"><span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#666">Total Views</span><strong id="statViews">—</strong><span style="font-size:11px;color:#555">Hacker Planet + posts</span></div>
+        <div class="admin-stat"><span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#666">Revenue (demo)</span><strong id="statRev">—</strong><span style="font-size:11px;color:#555">Stripe mock</span></div>
+        <div class="admin-stat"><span style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#666">Sign-ups (7d)</span><strong id="statSign">—</strong><span style="font-size:11px;color:#0a4b2e">+ linked to auth</span></div>
+      </div>
+      <div class="admin-panel">
+        <h3 style="font-family:Anton,sans-serif;text-transform:uppercase;font-size:14px">Recent activity</h3>
+        <div id="activityLog" style="margin-top:10px;font-family:Courier Prime,monospace;font-size:11px;color:#333;line-height:1.8"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div class="admin-panel"><h3>Quick actions</h3><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px"><button class="btn" onclick="document.querySelector('[data-tab=users]').click()">Manage users</button><button class="btn btn--yellow" onclick="document.querySelector('[data-tab=content]').click()">Edit content</button><button class="btn" onclick="location.href='../index.html'">View homepage</button></div></div>
+        <div class="admin-panel"><h3>System health</h3><p style="font-size:12px;line-height:1.6">Scrolling: <span style="color:#0a4b2e">● optimized (rAF, passive, will-change)</span><br>Clicks: <span style="color:#0a4b2e">● instant (prefetch, fast tap)</span><br>Storage: <span id="storageUse">—</span> / 5MB<br>Build: static, no backend</p></div>
+      </div>
+    </section>
+
+    <!-- USERS -->
+    <section id="tab-users" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <h2 style="font-family:Anton,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-size:20px">Users — unlimited control</h2>
+        <div style="display:flex;gap:8px"><input id="userSearch" placeholder="Search name/email/phone" class="form-input" style="padding:8px 10px;width:220px"><button id="addUserBtn" class="btn btn--yellow">+ Add user</button><button id="exportUsers" class="btn">Export JSON</button></div>
+      </div>
+      <div class="admin-panel" style="margin-top:12px;overflow:auto">
+        <table class="admin-table" id="usersTable">
+          <thead><tr><th>User</th><th>Contact</th><th>Provider</th><th>Role</th><th>Status</th><th>Created</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p style="font-size:11px;color:#777;margin-top:8px;font-family:Courier Prime,monospace">All sign-ups appear here instantly. Ban/promote/delete have immediate effect on login.</p>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section id="tab-content" style="display:none">
+      <h2 style="font-family:Anton,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-size:20px">Content Management — edit the live site</h2>
+      <p style="font-family:Courier Prime,monospace;font-size:11px;color:#666">Edits save to localStorage and reflect on homepage via JGAuth site-data hook. Unlimited edits.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px">
+        <div class="admin-panel">
+          <h3>Hero</h3>
+          <div class="form-group"><label>Hacker Planet title</label><input id="editHeroTitle" class="form-input" value="HacKer pLANeT"></div>
+          <div class="form-group"><label>Caption</label><textarea id="editCaption" class="form-input" rows="2">A new video series by Joe Grand that explores hacker culture, local flavor, and other interesting things around the world. Coming soon!</textarea></div>
+          <button class="btn btn--yellow" id="saveHero">Save hero</button>
+        </div>
+        <div class="admin-panel">
+          <h3>Posters (3)</h3>
+          <div id="posterEditors"></div>
+          <button class="btn" id="savePosters">Save posters</button>
+        </div>
+        <div class="admin-panel">
+          <h3>Purple cards (6)</h3>
+          <div style="font-size:12px;color:#555">Edit labels in <code>info-grid</code> — demo keeps them static; use this panel to override.</div>
+          <div class="form-group" style="margin-top:8px"><label>Override — Training card title</label><input id="editInfo" class="form-input" placeholder="Hardwear.io NL 2026"></div>
+          <button class="btn" id="saveInfo">Save</button>
+        </div>
+        <div class="admin-panel">
+          <h3>Site mode</h3>
+          <label style="display:flex;gap:8px;align-items:center;font-size:13px"><input type="checkbox" id="maintToggle"> Maintenance mode (show banner)</label>
+          <div style="margin-top:10px"><button class="btn btn--pink" id="clearCache">Clear all site data</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIA -->
+    <section id="tab-media" style="display:none">
+      <h2 style="font-family:Anton,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-size:20px">Media Library</h2>
+      <div class="admin-panel" style="margin-top:12px">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><button class="btn" id="uploadMock">+ Upload (mock)</button><span style="font-family:Courier Prime,monospace;font-size:11px;color:#777;align-self:center">12 assets • 3.4 MB — served locally</span></div>
+        <div id="mediaGrid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px"></div>
+      </div>
+    </section>
+
+    <!-- ANALYTICS -->
+    <section id="tab-analytics" style="display:none">
+      <h2 style="font-family:Anton,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-size:20px">Analytics</h2>
+      <div class="admin-panel" style="margin-top:12px">
+        <div style="height:160px;background:repeating-linear-gradient(90deg,#f5f5f5 0 40px,#fff 40px 80px);border:1.5px solid #111;display:grid;place-items:center;font-family:Courier Prime,monospace;color:#777">Chart: Views per day — data from localStorage (demo static)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px;text-align:center">
+          <div><strong style="font-size:20px;display:block">68%</strong><span style="font-size:11px;color:#555">Direct traffic</span></div>
+          <div><strong style="font-size:20px;display:block">22%</strong><span style="font-size:11px;color:#555">Discord</span></div>
+          <div><strong style="font-size:20px;display:block">10%</strong><span style="font-size:11px;color:#555">YouTube</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="tab-settings" style="display:none">
+      <h2 style="font-family:Anton,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-size:20px">Settings — unlimited access</h2>
+      <div class="admin-panel" style="margin-top:12px">
+        <h3>Admin profile</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px">
+          <div class="form-group"><label>Name</label><input id="setName" class="form-input"></div>
+          <div class="form-group"><label>Email</label><input id="setEmail" class="form-input"></div>
+        </div>
+        <button class="btn btn--yellow" id="saveProfile">Save profile</button>
+        <h3 style="margin-top:16px">Danger zone</h3>
+        <button class="btn" style="background:#fff;border-color:#c00;color:#c00" id="wipeAll">Wipe all users (keep admins)</button>
+        <p style="font-size:11px;color:#777;margin-top:8px;font-family:Courier Prime,monospace">As admin you can view/edit/delete any user, content, or setting.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="../js/auth.js"></script>
+<script src="../js/app.js"></script>
+<script>
+(function(){
+  const user = JGAuth.requireAdmin();
+  if(!user) return;
+  document.getElementById('adminUser').innerHTML = `<img src="${user.avatar||'https://i.pravatar.cc/100?u='+encodeURIComponent(user.email)}" style="width:22px;height:22px;border-radius:50%"/> ${user.name} <span class="badge badge-admin" style="margin-left:6px">ADMIN</span>`;
+  document.getElementById('setName').value = user.name;
+  document.getElementById('setEmail').value = user.email;
+  document.getElementById('adminBuild').textContent = 'Build ' + new Date().toLocaleDateString();
+
+  // Tabs
+  document.querySelectorAll('.admin-nav a').forEach(a=>{
+    a.addEventListener('click', e=>{
+      e.preventDefault();
+      document.querySelectorAll('.admin-nav a').forEach(x=>x.classList.remove('active'));
+      a.classList.add('active');
+      const tab = a.dataset.tab;
+      document.querySelectorAll('.admin-main > section').forEach(s=>s.style.display='none');
+      const el = document.getElementById('tab-'+tab);
+      if(el) el.style.display='block';
+      localStorage.setItem('jg_admin_tab', tab);
+    });
+  });
+  const saved = localStorage.getItem('jg_admin_tab');
+  if(saved) document.querySelector(`[data-tab="${saved}"]`)?.click();
+
+  // Stats
+  function refreshStats(){
+    const users = JGAuth.getUsers();
+    const site = JSON.parse(localStorage.getItem('jg_site_data')||'{}');
+    document.getElementById('statUsers').textContent = users.length;
+    document.getElementById('statViews').textContent = (site.totalViews||0).toLocaleString();
+    document.getElementById('statRev').textContent = '$' + (site.revenue||0).toLocaleString();
+    document.getElementById('statSign').textContent = users.filter(u=> new Date(u.createdAt) > new Date(Date.now()-7*864e5)).length;
+    document.getElementById('storageUse').textContent = (new Blob([localStorage.getItem('jg_users')]).size/1024).toFixed(1)+' KB';
+    const log = document.getElementById('activityLog');
+    if(log){
+      const recent = users.slice(-5).reverse();
+      log.innerHTML = recent.map(u=>`• ${new Date(u.createdAt).toLocaleString()} — <strong>${u.name}</strong> (${u.email}) joined via <em>${u.provider}</em> — role: ${u.role}`).join('<br>') || 'No activity';
+    }
+  }
+  refreshStats();
+
+  // Users table
+  function renderUsers(filter=''){
+    const users = JGAuth.getUsers();
+    const q = filter.toLowerCase();
+    const rows = users.filter(u=> !q || (u.name+' '+u.email+' '+u.phone+' '+u.role+' '+u.provider).toLowerCase().includes(q));
+    const tbody = document.querySelector('#usersTable tbody');
+    tbody.innerHTML = rows.map(u=>`
+      <tr>
+        <td><strong>${u.name}</strong><br><span style="font-size:11px;color:#555">${u.id}</span></td>
+        <td>${u.email}<br><span style="color:#666">${u.phone||'—'}</span></td>
+        <td><span class="badge" style="background:#f0f0f0">${u.provider}</span></td>
+        <td><span class="badge ${u.role==='admin'?'badge-admin':'badge-client'}">${u.role}</span></td>
+        <td>${u.banned?'<span class="badge badge-banned">BANNED</span>':'<span class="badge badge-active">ACTIVE</span>'}</td>
+        <td style="font-family:Courier Prime,monospace;font-size:11px">${new Date(u.createdAt).toLocaleDateString()}</td>
+        <td>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button class="btn" style="padding:4px 6px;font-size:10px" data-action="toggleBan" data-id="${u.id}">${u.banned?'Unban':'Ban'}</button>
+            <button class="btn" style="padding:4px 6px;font-size:10px" data-action="toggleRole" data-id="${u.id}">${u.role==='admin'?'Demote':'Make admin'}</button>
+            <button class="btn" style="padding:4px 6px;font-size:10px;background:#fff;color:#c00;border-color:#c00" data-action="delete" data-id="${u.id}">Delete</button>
+          </div>
+        </td>
+      </tr>
+    `).join('');
+    tbody.querySelectorAll('button').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        const id=b.dataset.id, act=b.dataset.action;
+        let users = JGAuth.getUsers();
+        const idx = users.findIndex(x=>x.id===id);
+        if(idx===-1) return;
+        if(act==='delete'){
+          if(!confirm('Delete user '+users[idx].email+'?')) return;
+          users.splice(idx,1);
+        } else if(act==='toggleBan'){
+          users[idx].banned = !users[idx].banned;
+        } else if(act==='toggleRole'){
+          users[idx].role = users[idx].role==='admin' ? 'client' : 'admin';
+        }
+        JGAuth.setUsers(users);
+        renderUsers(document.getElementById('userSearch').value);
+        refreshStats();
+        JGAuth.toast('Updated');
+      });
+    });
+  }
+  renderUsers();
+  document.getElementById('userSearch').addEventListener('input', e=>renderUsers(e.target.value));
+  document.getElementById('addUserBtn').onclick=()=>{
+    const name=prompt('Full name:'); if(!name) return;
+    const email=prompt('Email:'); if(!email) return;
+    const phone=prompt('Phone (+1...):')||'';
+    const pw=prompt('Password (min 8):')||'Test1234';
+    const role=confirm('Make admin? OK=admin, Cancel=client') ? 'admin' : 'client';
+    try{
+      const u = JGAuth.signup({name,email,phone,password:pw, provider:'email'});
+      u.role=role; let users=JGAuth.getUsers(); users=users.map(x=>x.id===u.id?u:x); JGAuth.setUsers(users);
+      renderUsers(); refreshStats(); JGAuth.toast('User added');
+    }catch(e){ JGAuth.toast(e.message); }
+  };
+  document.getElementById('exportUsers').onclick=()=>{
+    const blob = new Blob([JSON.stringify(JGAuth.getUsers(),null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='joegrand-users.json'; a.click(); setTimeout(()=>URL.revokeObjectURL(url),1000);
+  };
+
+  // Content editors
+  const posters = [
+    {k:'Grand Idea Studio', t:'Projects + Engineering'},
+    {k:'YouTube', t:'Videos'},
+    {k:'Official Discord', t:'Community'}
+  ];
+  const pe = document.getElementById('posterEditors');
+  if(pe){
+    pe.innerHTML = posters.map((p,i)=>`
+      <div class="form-group"><label>Poster ${i+1} title</label><input class="form-input poster-input" data-i="${i}" value="${p.k}"></div>
+      <div class="form-group"><label>Poster ${i+1} kicker</label><input class="form-input poster-kicker" data-i="${i}" value="${p.t}"></div>
+    `).join('');
+  }
+  document.getElementById('saveHero')?.addEventListener('click', ()=>{
+    const t=document.getElementById('editHeroTitle').value;
+    const c=document.getElementById('editCaption').value;
+    localStorage.setItem('jg_hero', JSON.stringify({title:t, caption:c}));
+    JGAuth.toast('Hero saved — reload homepage to see');
+  });
+  document.getElementById('savePosters')?.addEventListener('click', ()=>{
+    const data = Array.from(document.querySelectorAll('.poster-input')).map(i=>i.value);
+    localStorage.setItem('jg_posters', JSON.stringify(data));
+    JGAuth.toast('Posters saved');
+  });
+  document.getElementById('saveInfo')?.addEventListener('click', ()=>{
+    localStorage.setItem('jg_info', document.getElementById('editInfo').value);
+    JGAuth.toast('Info card updated');
+  });
+  document.getElementById('clearCache')?.addEventListener('click', ()=>{
+    if(confirm('Clear hero/posters/info overrides?')){ localStorage.removeItem('jg_hero'); localStorage.removeItem('jg_posters'); localStorage.removeItem('jg_info'); JGAuth.toast('Cleared'); }
+  });
+  document.getElementById('maintToggle')?.addEventListener('change', e=>{
+    localStorage.setItem('jg_maint', e.target.checked ? '1':'0');
+    JGAuth.toast(e.target.checked ? 'Maintenance ON' : 'Maintenance OFF');
+  });
+
+  // Media
+  const media = ['banner.webp','gis.webp','youtube.webp','discord.webp','television.png','tv-inner.jpg','punk-logo.webp','death-logo.webp','header-paper.webp','scribble-x.png','scribble-resistor.png','tape-one.png'];
+  const mg = document.getElementById('mediaGrid');
+  if(mg) mg.innerHTML = media.map(m=>`
+    <div style="border:1.5px solid #111;background:#fff;padding:8px;text-align:center">
+      <div style="height:80px;background:#eee;display:grid;place-items:center;overflow:hidden"><img src="../assets/${m}" style="max-width:100%;max-height:80px;object-fit:cover" loading="lazy"></div>
+      <div style="font-family:Courier Prime,monospace;font-size:10px;margin-top:6px;word-break:break-all">${m}</div>
+      <div style="font-size:10px;color:#666">локal • 200</div>
+    </div>
+  `).join('');
+  document.getElementById('uploadMock')?.addEventListener('click', ()=>JGAuth.toast('Upload mock — connect S3/R2 in production'));
+
+  // Settings
+  document.getElementById('saveProfile')?.addEventListener('click', ()=>{
+    let users=JGAuth.getUsers();
+    const idx=users.findIndex(u=>u.id===user.id);
+    if(idx>-1){ users[idx].name=document.getElementById('setName').value; users[idx].email=document.getElementById('setEmail').value; JGAuth.setUsers(users); JGAuth.toast('Profile saved'); renderUsers(); }
+  });
+  document.getElementById('wipeAll')?.addEventListener('click', ()=>{
+    if(!confirm('Keep only admins?')) return;
+    const users=JGAuth.getUsers().filter(u=>u.role==='admin');
+    JGAuth.setUsers(users); renderUsers(); refreshStats(); JGAuth.toast('Non-admins wiped');
+  });
+  document.getElementById('saveProfile') && (document.getElementById('maintToggle').checked = localStorage.getItem('jg_maint')==='1');
+})();
+</script>
+</body>
+</html>

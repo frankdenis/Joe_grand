@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joe Grand — Hardware Hacker • Engineer • Kingpin | Official</title>
+<meta name="description" content="Joe Grand, also known as Kingpin — computer engineer, hardware hacker, DEF CON badgewright, L0pht member. Hacker Planet video series coming soon.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="top-nav" aria-label="Primary">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="brand-dot"></span><span>JOE GRAND <b style="color:var(--yellow)">• KINGPIN</b></span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#planet">Hacker Planet</a></li>
+      <li><a href="pages/projects.html">Projects</a></li>
+      <li><a href="pages/videos.html">Videos</a></li>
+      <li><a href="pages/community.html">Community</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="searchToggle" aria-label="Search">⌕</button>
+      <div data-auth-nav style="display:flex;gap:8px;align-items:center"></div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="search-bar" id="searchBar">
+    <input id="searchInput" type="search" placeholder="Search posters, hardware, youtube…">
+    <button class="btn" onclick="document.getElementById('searchBar').classList.remove('open')">Close</button>
+  </div>
+</nav>
+
+<!-- YELLOW TAPE HEADER -->
+<div class="tape-top">
+  <div class="tape-inner">
+    <img class="punk-logo" src="assets/punk-logo.webp" alt="Joe Grand punk skull logo" width="1834" height="1144" loading="eager">
+  </div>
+</div>
+<div class="hacker-bar" id="planet">
+  <h1>HacKer <span>pLANeT</span></h1>
+</div>
+
+<main>
+  <!-- HERO PHOTO -->
+  <div class="hero-wrap reveal">
+    <div class="hero-photo">
+      <img src="assets/tv-inner.jpg" alt="Joe Grand — B&W portrait in hacker space with beanie" width="2560" height="1707" loading="eager">
+      <div class="hero-caption">A new video series by Joe Grand that explores hacker culture, local flavor, and other interesting things around the world. Coming soon!</div>
+    </div>
+    <img class="scribble-x" src="assets/scribble-x.png" alt="" aria-hidden="true">
+    <div style="text-align:center;margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+      <a href="pages/videos.html" class="btn btn--yellow">Watch teaser</a>
+      <a href="pages/community.html" class="btn">Get notified — free</a>
+    </div>
+  </div>
+
+  <!-- POSTER GRID -->
+  <section class="posters">
+    <div class="container">
+      <div class="posters-grid">
+        <div class="poster-col">
+          <img class="poster-tape" src="assets/tape-three.png" alt="" aria-hidden="true">
+          <a class="poster-card" href="pages/projects.html" aria-label="Projects + Engineering — Grand Idea Studio">
+            <div class="poster-kicker">Projects + Engineering</div>
+            <div class="poster-title">Grand Idea Studio</div>
+            <div class="poster-img-wrap"><img class="poster-img" src="assets/gis.webp" alt="Grand Idea Studio hardware" loading="lazy"></div>
+            <div class="poster-cta"><span>Explore portfolio →</span><span>✦</span></div>
+          </a>
+        </div>
+        <div class="poster-col">
+          <img class="poster-tape" src="assets/tape-two.png" alt="" aria-hidden="true">
+          <a class="poster-card" href="pages/videos.html" aria-label="Videos — YouTube">
+            <div class="poster-kicker">Videos</div>
+            <div class="poster-title">YouTube</div>
+            <div class="poster-img-wrap"><img class="poster-img" src="assets/youtube.webp" alt="Joe Grand YouTube" loading="lazy"></div>
+            <div class="poster-cta"><span>Watch &amp; subscribe</span><span>▶</span></div>
+          </a>
+        </div>
+        <div class="poster-col">
+          <img class="poster-tape" src="assets/tape-one.png" alt="" aria-hidden="true">
+          <a class="poster-card" href="pages/community.html" aria-label="Community — Official Discord">
+            <div class="poster-kicker">Community</div>
+            <div class="poster-title">Official Discord</div>
+            <div class="poster-img-wrap"><img class="poster-img" src="assets/discord.webp" alt="Discord community" loading="lazy"></div>
+            <div class="poster-cta"><span>Join the server</span><span>◐</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PURPLE INFO GRID -->
+  <section class="info-wrap">
+    <div class="container">
+      <div class="info-grid">
+        <a class="info-cell" href="https://github.com/joegrand/stm32-fault-injection" target="_blank" rel="noopener">
+          <div class="info-label">Hardware Hacking</div>
+          <div class="info-mid">STM32 Fault Injection</div>
+          <div class="info-bottom">GitHub</div>
+        </a>
+        <a class="info-cell" href="https://hardwear.io/trainings/nl-2026/practical-hardware-hacking-basics-bonus-day-2026/" target="_blank" rel="noopener">
+          <div class="info-label">training course</div>
+          <div class="info-mid">Hardwear.io NL 2026</div>
+          <div class="info-bottom">Amsterdam, The Netherlands</div>
+        </a>
+        <a class="info-cell" href="https://en.wikipedia.org/wiki/Joe_Grand" target="_blank" rel="noopener">
+          <div class="info-label">information</div>
+          <div class="info-mid">Wikipedia</div>
+          <div class="info-bottom">Joe Grand</div>
+        </a>
+        <a class="info-cell" href="https://wellgousa.com/films/cold-wallet" target="_blank" rel="noopener">
+          <div class="info-label">Watch</div>
+          <div class="info-mid">Cold Wallet</div>
+          <div class="info-bottom">Joe Grand Cameo!</div>
+        </a>
+        <a class="info-cell" href="https://darknetdiaries.com/episode/155/" target="_blank" rel="noopener">
+          <div class="info-label">Listen</div>
+          <div class="info-mid">Darknet Diaries</div>
+          <div class="info-bottom">Episode 155: Kingpin</div>
+        </a>
+        <a class="info-cell" href="https://www.imdb.com/name/nm2706174/" target="_blank" rel="noopener">
+          <div class="info-label">information</div>
+          <div class="info-mid">IMDb</div>
+          <div class="info-bottom">Joe Grand</div>
+        </a>
+      </div>
+      <p style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#666;text-align:center;margin-top:8px">External resources open in new tab • Internal navigation stays on this site</p>
+    </div>
+  </section>
+
+  <!-- JOE GRAND BIO -->
+  <section id="about" class="bio-section reveal">
+    <div class="container">
+      <div class="bio-title">Joe <span>GRAnd</span></div>
+      <div class="tv-wrap" style="position:relative;max-width:760px;margin:16px auto 0">
+        <img src="assets/tv-inner.jpg" alt="Joe Grand at bench" style="position:absolute;left:10.8%;top:8%;width:78%;height:72%;object-fit:cover;object-position:center;border:2px solid #222;transform:rotate(-0.6deg)" loading="lazy">
+        <img class="tv-img" src="assets/television.png" alt="Retro television overlay" loading="lazy" width="1590" height="896" style="position:relative;z-index:2">
+        <div class="tv-overlay"></div>
+      </div>
+      <img class="wave-scribble" src="assets/scribble-resistor.png" alt="" aria-hidden="true" loading="lazy">
+      <div class="bio-text">
+        <p>Joe Grand, also known as <strong>Kingpin</strong>, is a computer engineer, hardware hacker, creator of the first electronic badges for <a href="https://defcon.org/" target="_blank" rel="noopener">DEFCON</a>, member of <a href="https://en.wikipedia.org/wiki/L0pht" target="_blank" rel="noopener">L0pht Heavy Industries</a>, and former technological juvenile delinquent. He has created <a href="pages/projects.html">multiple tools</a>, <a href="pages/projects.html">conference badges</a>, <a href="pages/videos.html">videos</a>, <a href="pages/projects.html">talks</a>, and <a href="pages/community.html">training courses</a>, which have helped to shape hacker culture and hardware security.</p>
+        <p style="margin-top:8px;opacity:.8">Portland, OR • Grand Idea Studio • offspec.io • Discovery Channel’s Prototype This! • Honorary Doctor — exploring electronic systems since the 1980s.</p>
+      </div>
+      <div class="bio-actions">
+        <a href="pages/projects.html" class="btn btn--yellow">View Portfolio</a>
+        <a href="pages/videos.html" class="btn">Latest Videos</a>
+        <a href="mailto:contact@grandideastudio.com" class="btn">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:10px 0 22px">
+    <div class="container">
+      <div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center">
+        <div>
+          <h3 style="font-family:'Anton',sans-serif;text-transform:uppercase;color:#111">Stay in the loop</h3>
+          <p style="font-family:'Courier Prime',monospace;font-size:12px;opacity:.75;margin-top:4px">Hacker Planet launch, hardware drops, Hardwear.io labs. One email/month, no spam.</p>
+        </div>
+        <form onsubmit="event.preventDefault();toast.textContent='Thanks! You’re on the list (demo).';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600)" style="display:flex;gap:8px;flex-wrap:wrap">
+          <input required type="email" placeholder="your@email.com" style="flex:1;min-width:160px;padding:9px 10px;border:1.5px solid #111;font-family:'Courier Prime',monospace">
+          <button type="submit" class="btn btn--pink" style="white-space:nowrap">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img class="footer-logo" src="assets/death-logo.webp" alt="Death logo mark" loading="lazy">
+    <div class="social-grid">
+      <a class="social-btn" id="copyEmail" href="mailto:contact@grandideastudio.com" aria-label="Email"><svg viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156C505 142 512 126.8 512 112c0-26.5-21.5-48-48-48H48zM0 196V384c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z"/></svg></a>
+      <a class="social-btn" href="https://youtube.com/@JoeGrand" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 576 512"><path d="M549.7 124.1C543.5 100.4 524.9 81.8 501.4 75.5 458.9 64 288 64 288 64s-170.9 0-213.4 11.5c-23.5 6.3-42 24.2-48.3 47.8C15 167 15 256 15 256s0 89 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8 42.5 11.4 213.4 11.5 213.4 11.5s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V174l142.7 81.8-142.7 81.8z"/></svg></a>
+      <a class="social-btn" href="https://discord.com/invite/wud8KnF2Gm" target="_blank" rel="noopener" aria-label="Discord"><svg viewBox="0 0 640 512"><path d="M524.5 69.8A485 485 0 0 0 404.1 32 381 381 0 0 0 381 75.2 464 464 0 0 0 256 76a381 381 0 0 0-22-43.2A485 485 0 0 0 114.6 69.8C18 214.3 8 306.6 12.7 398.9A485 485 0 0 0 158 471.8a351 351 0 0 0 30.1-48.1 301 301 0 0 1-43.5-20.8 351 351 0 0 0 60.4-6.9 321 321 0 0 0 243 0c2.8 2.4 5.7 4.7 8.7 6.9a300 300 0 0 1-43.5 20.8 350 350 0 0 0 30.1 48.1A485 485 0 0 0 626.7 400C632 306.6 622 214.3 524.5 69.8zM222.5 337.6c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.5 0 53.4 26.8 52.8 59.2 0 32.6-23.3 59.2-52.8 59.2zm195 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.5 0 53.4 26.8 52.8 59.2 0 32.6-23.3 59.2-52.8 59.2z"/></svg></a>
+      <a class="social-btn" href="https://x.com/joegrand" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l171.5-196.5L8 48h144.7l100.9 133.2L389.2 48zm-26.8 373.2h39.1L152.2 88.5H108.1l254.3 332.7z"/></svg></a>
+      <a class="social-btn" href="https://www.facebook.com/joegrandofficial" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 320 512"><path d="M279.1 288l14.2-92.7h-88.9V167c0-25.4 12.4-50.2 52.4-50.2h40.5V6.3S250.6 0 217.2 0c-69.5 0-115 42.1-115 118.3V195.3H32.1V288h70.1v224h86.9V288z"/></svg></a>
+      <a class="social-btn" href="https://www.instagram.com/joegrandofficial" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 448 512"><path d="M224.1 141a115 115 0 1 0 115 115 115 115 0 0 0-115-115zm0 190a74.6 74.6 0 1 1 74.6-74.6 74.6 74.6 0 0 1-74.6 74.6zm93.4-195.1a26.8 26.8 0 1 1 26.8 26.8 26.8 26.8 0 0 1-26.8-26.8zm145.1 27.2c-1.7-36.3-9.9-68.4-36.2-94.7s-58.4-34.5-94.8-36.2c-37.4-2.1-149.4-2.1-186.8 0-36.3 1.7-68.4 9.9-94.7 36.2S11.6 126.8 9.9 163.1c-2.1 37.4-2.1 149.4 0 186.8 1.7 36.3 9.9 68.4 36.2 94.7s58.4 34.5 94.7 36.2c37.4 2.1 149.4 2.1 186.8 0 36.3-1.7 68.4-9.9 94.7-36.2s34.5-58.4 36.2-94.7c2.1-37.4 2.1-149.5 0-186.9zm-42.2 223.5c-4.8 12-14 21.2-26 26-17.8 7.1-60 5.5-79.6 5.5s-61.8 1.6-79.5-5.5c-12-4.8-21.2-14-26-26-7.1-17.8-5.5-60-5.5-79.6s-1.6-61.8 5.5-79.5c4.8-12 14-21.2 26-26 17.8-7.1 60-5.5 79.6-5.5s61.8-1.6 79.6 5.5c12 4.8 21.2 14 26 26 7.1 17.7 5.5 60 5.5 79.5s1.6 61.9-5.5 79.6z"/></svg></a>
+      <a class="social-btn" href="https://www.threads.com/@joegrandofficial" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 448 512"><path d="M433 179.1c0-97.2-63.7-125.6-63.7-125.6-64-29-291.4-29-355.3 0 0 0-63.7 28.5-63.7 125.6 0 22.2-.1 48.7.1 76.8 0 97.2 13.6 198.5 81.9 222.2 31.2 10.5 57.9 13.5 79.3 11.9 38.8-2.8 59-18.1 59-18.1l-1.2-28.3s-27 8.5-57.3 7.5c-30-.9-61.6-3.3-66.5-40-.5-4.5-.8-9.3-.8-14.1 76.5 18.7 141.8 8.1 159.7 6 50-6 93.9-36.9 99.4-65.1 8.8-44.6 8.1-108.6 8.1-108.6z"/></svg></a>
+      <a class="social-btn" href="https://chaos.social/@joegrand" target="_blank" rel="noopener" aria-label="Mastodon"><svg viewBox="0 0 448 512"><path d="M433 179.1c0-97.2-63.7-125.6-63.7-125.6-64-29-291.4-29-355.3 0 0 0-63.7 28.5-63.7 125.6 0 22.2-.1 48.7.1 76.8 0 97.2 13.6 198.5 81.9 222.2 31.2 10.5 57.9 13.5 79.3 11.9 38.8-2.8 59-18.1 59-18.1l-1.2-28.3s-27 8.5-57.3 7.5c-30-.9-61.6-3.3-66.5-40-.5-4.5-.8-9.3-.8-14.1 76.5 18.7 141.8 8.1 159.7 6 50-6 93.9-36.9 99.4-65.1 8.8-44.6 8.1-108.6 8.1-108.6zM357.9 304.3h-46.6V190.1c0-49.7-57.2-51.6-57.2 6.2v55.7h-46.3v-55.7c0-57.8-57.2-55.9-57.2-6.2v114.2H104c0-122.1-4.7-147.9 16.4-174.9 23.3-28.9 71.4-30.8 92.8 6.1l10.4 17.4 10.4-17.4c21.4-37.1 69.8-34.8 92.8-6.1 21.3 27.3 16.5 53 16.5 174.9z"/></svg></a>
+      <a class="social-btn" href="https://bsky.app/profile/joegrand.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky"><svg viewBox="0 0 576 512"><path d="M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-83.6 12.5-157.8 42.9-60.4 151.2 107 119 146.6-23.8 166.9-92 20.3 68.2 43.8 197.8 164.8 92 91.1-101.2 24.9-138.7-58.7-151.2-2.9-.4-5.9-.8-8.9-1.2 2.9.4 5.9.8 8.9 1.2 57 6.3 118.9-13.4 136.3-71.7 5.2-17.7 13.3-123.6 13.3-138.4s-2.9-39.7-19.2-47c-14.1-6.3-35.6-13.3-91.8 26.5C385.1 82.1 314.1 176.5 288 227.1z"/></svg></a>
+      <a class="social-btn" href="https://www.tiktok.com/@joegrandofficial" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 448 512"><path d="M448.5 209.9c-44 .1-87-13.6-122.8-39.2V349c0 33.1-10.1 65.4-29 92.6s-45.6 48-76.6 59.6-64.8 13.5-96.9 5.3-60.9-25.9-82.7-50.8S5.2 399 1 367s2.9-66.1 18.6-95.2 40-52.7 69.6-67.7 62.9-20.5 95.7-16V278c-15-4.7-31.1-4.6-46 .4s-27.9 14.6-37 27.3-14 28.1-13.9 43.9 5.2 31 14.5 43.7 22.4 22.1 37.4 26.9 31.1 4.8 46-.1 28-14.4 37.2-27.1 14.2-28.1 14.2-43.8V0h88c0 7.4.6 14.9 1.9 22.2 3.1 16.3 9.4 31.9 18.7 45.7s21.3 25.6 35.2 34.6c19.9 13.1 43.2 20.1 67 20.1v87.4z"/></svg></a>
+      <a class="social-btn" href="https://github.com/joegrand" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 496 512"><path d="M165 395.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c0 2.3-1.7 4.2-4.5 4.2-1.7 0-3.2-.8-3.8-2.3-.4-1.1-.2-2.4.5-3.3 1.1-1.4 3.2-1.8 4.5-.9.9.9 1.5 2 1.5 3.3zm44.2-1.7c0 2.3-1.9 4.2-4.5 4.2-1.7 0-3.2-.8-4-2.2-.6-1.2-.4-2.5.4-3.4 1.1-1.2 2.9-1.6 4.5-.9.8.9 1.6 2 1.6 2.3zM244 8C109.2 8 0 116.3 0 250.2c0 106.9 69.1 197.6 165 229.6 12 2.2 16.4-5.2 16.4-11.5 0-5.7-.2-24.7-.3-44.8-67.1 14.6-81.2-28.4-81.2-28.4-11-27.8-26.8-35.2-26.8-35.2-21.9-15 1.7-14.7 1.7-14.7 24.2 1.7 37 24.8 37 24.8 21.5 36.9 56.4 26.2 70.1 20 2.2-15.6 8.4-26.2 15.3-32.2-53.6-6.1-110-26.8-110-119.2 0-26.3 9.4-47.9 24.8-64.7-2.5-6.1-10.8-30.6 2.4-63.8 0 0 20.2-6.5 66.2 24.7 19.2-5.3 39.8-8 60.3-8.1 20.4.1 40.9 2.8 60.1 8.1 46-31.2 66.1-24.7 66.1-24.7 13.2 33.2 4.9 57.7 2.4 63.8 15.4 16.9 24.8 38.4 24.8 64.7 0 92.7-56.5 113-110.3 119 8.6 7.4 16.3 22 16.3 44.5 0 32.1-.3 58-.3 65.9 0 6.3 4.3 13.8 16.5 11.5 95.8-32.2 164.8-122.9 164.8-229.6C488 116.3 378.7 8 244 8z"/></svg></a>
+    </div>
+    <div class="footer-copy">© <span id="year">2026</span> Joe Grand • All Rights Reserved • <a href="https://doc4design.com" target="_blank" rel="noopener">Designed in Arkansas by Doc4</a> — Independent rebuild, no affiliation. <a href="docs/ROUTE-INVENTORY.md">Docs</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+<script>
+// Hydrate hero/posters from admin edits (live connection to dashboard)
+(function(){
+  try{
+    const hero = JSON.parse(localStorage.getItem('jg_hero')||'null');
+    if(hero){
+      const t=document.querySelector('.hacker-bar h1'); if(t && hero.title) t.innerHTML=hero.title;
+      const c=document.querySelector('.hero-caption'); if(c && hero.caption) c.textContent=hero.caption;
+    }
+    const posters = JSON.parse(localStorage.getItem('jg_posters')||'null');
+    if(posters){
+      document.querySelectorAll('.poster-title').forEach((el,i)=>{ if(posters[i]) el.textContent=posters[i]; });
+    }
+    const info = localStorage.getItem('jg_info');
+    if(info){ const el=document.querySelector('.info-grid .info-cell:nth-child(2) .info-mid'); if(el) el.textContent=info; }
+    if(localStorage.getItem('jg_maint')==='1'){
+      const b=document.createElement('div'); b.textContent='⚠ MAINTENANCE MODE — admin enabled'; b.style.cssText='background:var(--yellow);color:#111;text-align:center;padding:6px;font-family:Special Elite,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase'; document.body.prepend(b);
+    }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

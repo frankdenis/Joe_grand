@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign In — Joe Grand</title>
+<link rel="icon" href="../assets/favicon.png">
+<link rel="stylesheet" href="../css/style.css">
+<meta name="theme-color" content="#0f0f0f">
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="inner">
+    <a class="brand" href="../index.html"><span class="brand-dot"></span><span>JOE GRAND <b style="color:var(--yellow)">• KINGPIN</b></span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#planet">Hacker Planet</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="../index.html#about">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="searchToggle" aria-label="Search">⌕</button>
+      <div data-auth-nav style="display:flex;gap:8px;align-items:center"></div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="search-bar" id="searchBar"><input id="searchInput" type="search" placeholder="Search…"><button class="btn" onclick="document.getElementById('searchBar').classList.remove('open')">Close</button></div>
+</nav>
+
+<main class="auth-wrap">
+  <div class="auth-card">
+    <div style="text-align:center;margin-bottom:12px">
+      <div style="width:44px;height:44px;background:var(--pink);border-radius:50%;display:grid;place-items:center;margin:0 auto 8px;font-size:18px;color:#fff">◉</div>
+      <h1 id="authTitle" style="font-family:Anton,sans-serif;letter-spacing:.02em;text-transform:uppercase;font-size:22px">Welcome back</h1>
+      <p id="authSub" style="font-family:Courier Prime,monospace;font-size:12px;color:#555;margin-top:4px">Sign in to continue to Joe Grand • Hacker Planet</p>
+    </div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tabLogin" data-mode="login">Sign In</button>
+      <button class="auth-tab" id="tabSignup" data-mode="signup">Create Account</button>
+    </div>
+
+    <!-- Professional providers -->
+    <div class="auth-provider">
+      <button class="provider-btn google" id="googleBtn" type="button">
+        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5h-1.9V20H24v8h11.3c-1.6 4.3-5.7 7.5-11.3 7.5-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.1 8 3l6-6C34.5 5.1 29.5 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20.3-7.6 20.3-21 0-1.4-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16.1 18.8 13 24 13c3.1 0 5.9 1.1 8 3l6-6C34.5 5.1 29.5 3 24 3 16.3 3 9.6 7.4 6.3 14.7z"/><path fill="#4CAF50" d="M24 45c5.5 0 10.4-1.9 14.1-5.1l-6.6-5.1C29.2 36.6 26.7 37.5 24 37.5c-5.6 0-9.7-3.2-11.3-7.5l-6.6 5.1C9.6 40.6 16.3 45 24 45z"/><path fill="#1976D2" d="M43.6 20.5H24v8h11.3c-.7 2-2 3.7-3.8 5l6.6 5.1C42 34.6 44 29.6 44 24c0-1.4-.1-2.7-.4-3.5z"/></svg>
+        Continue with Google
+      </button>
+      <button class="provider-btn gmail" id="gmailBtn" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v9.5a4.5 4.5 0 0 1-4.5 4.5h-7A4.5 4.5 0 0 1 4 13.5V4z" stroke="#111" stroke-width="1.5"/><path d="M4 8l8 6 8-6" stroke="#D93025" stroke-width="1.5"/><circle cx="18" cy="18" r="3.5" fill="#fff" stroke="#111"/><path d="M16.5 18.5l1.2 1.2 2.3-2.3" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Continue with Gmail
+      </button>
+      <button class="provider-btn phone" id="phoneProviderBtn" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.5 3.5c1.2 1.2 2.1 2.6 2.6 4.2-.7.7-1.4 1.4-2.1 2.1-1-2-2.4-3.8-4.2-5.2.7-.7 1.4-1.4 2.1-2.1.5.3 1.1.6 1.6 1zM20.5 10.2c-.6-1.5-1.5-2.9-2.6-4.2-.5.4-1.1.8-1.6 1.2 1 2 2.4 3.8 4.2 5.2.5-.5 1-1 1.5-1.5-.5-.4-1-.8-1.5-1.2zM8 11l2.1-2.1M15 16l2.1-2.1M7 17l2-2 5 5-2 2-5-5z" stroke="currentColor" stroke-width="1.2"/></svg>
+        Continue with Phone
+      </button>
+    </div>
+
+    <div class="divider">or</div>
+
+    <!-- Phone OTP quick section (hidden by default) -->
+    <div id="phoneSection" style="display:none;background:#f7f7f7;border:1.5px solid #111;padding:12px;margin-bottom:12px">
+      <label style="font-family:Special Elite,monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase">Phone number login (OTP)</label>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <input id="phoneInput" type="tel" placeholder="+1 212 555 0123" class="form-input" style="flex:1">
+        <button id="sendOtpBtn" class="btn" style="background:#111;color:#fff;border-color:#111;white-space:nowrap">Send code</button>
+      </div>
+      <div id="otpStep" style="display:none;margin-top:10px">
+        <p style="font-size:11px;color:#555;font-family:Courier Prime,monospace">Enter 6-digit code (demo code shown in toast)</p>
+        <div class="otp-row">
+          <input maxlength="1" data-otp><input maxlength="1" data-otp><input maxlength="1" data-otp><input maxlength="1" data-otp><input maxlength="1" data-otp><input maxlength="1" data-otp>
+        </div>
+        <button id="verifyOtpBtn" class="btn btn--yellow" style="width:100%;margin-top:10px">Verify & Sign in</button>
+      </div>
+    </div>
+
+    <!-- Email form -->
+    <form id="authForm" novalidate>
+      <div class="form-group" id="nameGroup" style="display:none">
+        <label>Full name</label>
+        <input id="nameInput" class="form-input" type="text" placeholder="Alex Rivera" autocomplete="name">
+        <div class="form-error">Name required</div>
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input id="emailInput" class="form-input" type="email" placeholder="you@lab.example" autocomplete="email" required>
+        <div class="form-error">Valid email required</div>
+      </div>
+      <div class="form-group" id="phoneGroup" style="display:none">
+        <label>Phone number (optional for recovery)</label>
+        <input id="phoneSignupInput" class="form-input" type="tel" placeholder="+1 212 555 0123" autocomplete="tel">
+        <div class="form-hint">Used for phone login & admin contact</div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input id="passwordInput" class="form-input" type="password" placeholder="••••••••" autocomplete="current-password" required>
+        <div class="form-error">Min 8 chars, upper/lower/number</div>
+        <div class="form-hint" id="pwHint">At least 8 characters</div>
+      </div>
+      <div class="form-group" id="confirmGroup" style="display:none">
+        <label>Confirm password</label>
+        <input id="confirmInput" class="form-input" type="password" placeholder="••••••••" autocomplete="new-password">
+        <div class="form-error">Passwords must match</div>
+      </div>
+      <label style="display:flex;gap:8px;align-items:center;margin:10px 0;font-size:12px;cursor:pointer">
+        <input type="checkbox" id="rememberMe" checked> <span>Remember me</span>
+      </label>
+      <button type="submit" id="submitBtn" class="btn" style="width:100%;background:var(--pink);border-color:var(--pink);color:#fff;padding:12px">Create account →</button>
+      <p style="font-size:11px;color:#777;margin-top:8px;text-align:center;font-family:Courier Prime,monospace">Admins have unlimited access. Clients see personalized dashboard. By continuing you agree to Terms & Privacy.</p>
+    </form>
+
+    <div class="auth-footer">
+      <span id="switchText">Already have an account?</span> <a id="switchLink">Sign in</a>
+      <br><a href="../index.html">← Back to Home</a>
+    </div>
+
+    <div style="margin-top:14px;padding:10px;background:#0a0a0a;color:#fff;border:1px solid #222;font-family:Courier Prime,monospace;font-size:10px;line-height:1.5">
+      <strong style="color:var(--yellow)">Demo logins:</strong><br>
+      Admin → admin@joegrand.com / Admin123!<br>
+      Joe → joe@grandideastudio.com / Kingpin99<br>
+      Client → alex@lab.example / Test1234
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="footer-inner"><img class="footer-logo" src="../assets/death-logo.webp" alt="" width="280" style="max-width:220px"><div class="footer-copy">© <span id="year">2026</span> Joe Grand</div></div></footer>
+
+<div class="toast" id="toast"></div>
+<script src="../js/auth.js"></script>
+<script src="../js/app.js"></script>
+<script>
+(function(){
+  const params = new URLSearchParams(location.search);
+  let mode = params.get('mode')==='signup' ? 'signup' : 'login';
+  const tabLogin = document.getElementById('tabLogin');
+  const tabSignup = document.getElementById('tabSignup');
+  const nameGroup = document.getElementById('nameGroup');
+  const phoneGroup = document.getElementById('phoneGroup');
+  const confirmGroup = document.getElementById('confirmGroup');
+  const title = document.getElementById('authTitle');
+  const sub = document.getElementById('authSub');
+  const submitBtn = document.getElementById('submitBtn');
+  const switchText = document.getElementById('switchText');
+  const switchLink = document.getElementById('switchLink');
+  const phoneSection = document.getElementById('phoneSection');
+
+  function setMode(m){
+    mode=m;
+    if(mode==='login'){
+      tabLogin.classList.add('active'); tabSignup.classList.remove('active');
+      title.textContent='Welcome back'; sub.textContent='Sign in to continue to Joe Grand • Hacker Planet';
+      nameGroup.style.display='none'; phoneGroup.style.display='none'; confirmGroup.style.display='none';
+      submitBtn.textContent='Sign in →'; submitBtn.style.background='var(--yellow)'; submitBtn.style.borderColor='var(--yellow)'; submitBtn.style.color='#111';
+      switchText.textContent='Don’t have an account?'; switchLink.textContent='Create account';
+      document.getElementById('passwordInput').autocomplete='current-password';
+    } else {
+      tabSignup.classList.add('active'); tabLogin.classList.remove('active');
+      title.textContent='Create your account'; sub.textContent='Join Hacker Planet — 30 seconds, free forever';
+      nameGroup.style.display='block'; phoneGroup.style.display='block'; confirmGroup.style.display='block';
+      submitBtn.textContent='Create account →'; submitBtn.style.background='var(--pink)'; submitBtn.style.borderColor='var(--pink)'; submitBtn.style.color='#fff';
+      switchText.textContent='Already have an account?'; switchLink.textContent='Sign in';
+      document.getElementById('passwordInput').autocomplete='new-password';
+    }
+    history.replaceState(null,'','?mode='+mode + (params.get('next')? '&next='+encodeURIComponent(params.get('next')):''));
+  }
+  setMode(mode);
+  tabLogin.onclick=()=>setMode('login');
+  tabSignup.onclick=()=>setMode('signup');
+  switchLink.onclick=(e)=>{ e.preventDefault(); setMode(mode==='login'?'signup':'login'); };
+
+  // Providers
+  function handleGoogle(acc, provider){
+    try{
+      const users = JGAuth.getUsers();
+      let user = users.find(u=>u.email.toLowerCase()===acc.email.toLowerCase());
+      if(!user){
+        user = JGAuth.signup({name:acc.name, email:acc.email, phone:'', password: Math.random().toString(36).slice(2), provider});
+        user.avatar = acc.avatar; JGAuth.setUsers(JGAuth.getUsers().map(u=>u.id===user.id?user:u));
+      }
+      JGAuth.createSession(user);
+      JGAuth.toast(`Signed in as ${user.name} via ${provider}`);
+      const next = params.get('next');
+      setTimeout(()=>location.href = next ? decodeURIComponent(next) : (user.role==='admin' ? 'admin.html' : '../index.html'), 700);
+    }catch(e){ JGAuth.toast(e.message); }
+  }
+  document.getElementById('googleBtn').onclick=()=>JGAuth.openGooglePicker(acc=>handleGoogle(acc,'google'));
+  document.getElementById('gmailBtn').onclick=()=>JGAuth.openGooglePicker(acc=>handleGoogle(acc,'gmail'));
+
+  document.getElementById('phoneProviderBtn').onclick=()=>{
+    const show = phoneSection.style.display==='none' || !phoneSection.style.display;
+    phoneSection.style.display = show ? 'block' : 'none';
+    if(show) document.getElementById('phoneInput').focus();
+  };
+
+  // Phone OTP flow
+  document.getElementById('sendOtpBtn').onclick=()=>{
+    const phone = document.getElementById('phoneInput').value.trim();
+    if(!phone || !/^\+?[0-9\s\-()]{7,}$/.test(phone)){ JGAuth.toast('Enter valid phone e.g. +12125550123'); return; }
+    JGAuth.requestOTP(phone);
+    document.getElementById('otpStep').style.display='block';
+    document.querySelectorAll('[data-otp]')[0].focus();
+  };
+  // OTP auto-move
+  document.querySelectorAll('[data-otp]').forEach((inp,i)=>{
+    inp.addEventListener('input', ()=>{
+      if(inp.value && i<5) document.querySelectorAll('[data-otp]')[i+1].focus();
+    });
+    inp.addEventListener('keydown', e=>{
+      if(e.key==='Backspace' && !inp.value && i>0) document.querySelectorAll('[data-otp]')[i-1].focus();
+    });
+  });
+  document.getElementById('verifyOtpBtn').onclick=()=>{
+    const phone = document.getElementById('phoneInput').value.trim();
+    const code = Array.from(document.querySelectorAll('[data-otp]')).map(i=>i.value).join('');
+    if(code.length!==6){ JGAuth.toast('Enter 6-digit code'); return; }
+    if(!JGAuth.verifyOTP(phone, code)){ JGAuth.toast('Invalid or expired code'); return; }
+    // find or create user
+    let users = JGAuth.getUsers();
+    let user = users.find(u=>u.phone===phone);
+    if(!user){
+      user = JGAuth.signup({name: phone, email: `phone_${phone.replace(/[^0-9]/g,'')}@phone.local`, phone, password: code, provider:'phone'});
+    }
+    JGAuth.createSession(user);
+    JGAuth.toast('Phone verified — welcome!');
+    const next = params.get('next');
+    setTimeout(()=>location.href = next ? decodeURIComponent(next) : '../index.html', 700);
+  };
+
+  // Email form
+  const form = document.getElementById('authForm');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const pwRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    const name = document.getElementById('nameInput').value.trim();
+    const email = document.getElementById('emailInput').value.trim();
+    const phone = document.getElementById('phoneSignupInput') ? document.getElementById('phoneSignupInput').value.trim() : '';
+    const pw = document.getElementById('passwordInput').value;
+    const confirm = document.getElementById('confirmInput') ? document.getElementById('confirmInput').value : '';
+
+    let ok=true;
+    // reset errors
+    form.querySelectorAll('.form-input').forEach(i=>i.classList.remove('error'));
+    if(mode==='signup' && !name){ document.getElementById('nameInput').classList.add('error'); ok=false; }
+    if(!emailRe.test(email)){ document.getElementById('emailInput').classList.add('error'); ok=false; }
+    if(!pwRe.test(pw)){ document.getElementById('passwordInput').classList.add('error'); ok=false; }
+    if(mode==='signup' && pw!==confirm){ document.getElementById('confirmInput').classList.add('error'); ok=false; }
+    if(!ok){ JGAuth.toast('Please fix highlighted fields'); return; }
+
+    try{
+      if(mode==='signup'){
+        const u = JGAuth.signup({name, email, phone, password:pw, provider:'email'});
+        JGAuth.createSession(u);
+        JGAuth.toast('Account created — welcome '+u.name+'!');
+        setTimeout(()=>location.href = u.role==='admin' ? 'admin.html' : '../index.html', 700);
+      } else {
+        const identifier = email; // login via phone also works if they type phone
+        const u = JGAuth.login({identifier, password:pw});
+        JGAuth.createSession(u);
+        JGAuth.toast('Welcome back, '+u.name);
+        const next = params.get('next');
+        setTimeout(()=>location.href = next ? decodeURIComponent(next) : (u.role==='admin' ? 'admin.html' : '../index.html'), 600);
+      }
+    }catch(err){ JGAuth.toast(err.message); }
+  });
+
+  // Prefill for demo convenience (optional)
+  // if login, suggest admin
+  if(mode==='login'){
+    document.getElementById('emailInput').placeholder='admin@joegrand.com';
+  }
+})();
+</script>
+</body>
+</html>

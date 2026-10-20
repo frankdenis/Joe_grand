@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects — Grand Idea Studio • Joe Grand</title>
+<link rel="icon" href="../assets/favicon.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<nav class="top-nav"><div class="inner">
+  <a class="brand" href="../index.html"><span class="brand-dot"></span><span>JOE GRAND <b>• KINGPIN</b></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html#planet">Hacker Planet</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="../index.html#about">About</a></li>
+  </ul>
+  <div class="nav-actions"><button id="searchToggle">⌕</button><div data-auth-nav style="display:flex;gap:8px;align-items:center"></div><button class="hamburger" id="hamburger">☰</button></div>
+</div>
+<div class="search-bar" id="searchBar"><input id="searchInput" type="search" placeholder="Search projects…"><button class="btn" onclick="document.getElementById('searchBar').classList.remove('open')">Close</button></div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <div class="muted">Projects + Engineering • Est. 1998</div>
+    <h1>Grand Idea Studio</h1>
+    <p>Product design, hardware hacking tools, and security research that shaped a culture. Below is an independent showcase — all links to the original studio stay intact as external references.</p>
+  </div>
+</header>
+
+<main class="container">
+  <div class="filter-bar" style="margin-top:18px">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="security">Security Tools</button>
+    <button class="chip" data-filter="badge">Badges</button>
+    <button class="chip" data-filter="talk">Talks</button>
+  </div>
+  <div class="content-grid" style="grid-template-columns:1fr">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+      <div class="card" data-cat="security"><h3>JTAGulator</h3><p>Open-source hardware for identifying JTAG / UART pins. Used worldwide in hardware security labs.</p><a href="https://grandideastudio.com/portfolio/security/" target="_blank" class="btn" style="margin-top:10px">View on GIS →</a></div>
+      <div class="card" data-cat="security"><h3>STM32 Fault Injection</h3><p>Glitching framework, tutorials, and open datasets. The site’s featured GitHub repo re-hosted as an external resource.</p><a href="https://github.com/joegrand/stm32-fault-injection" target="_blank" class="btn" style="margin-top:10px">GitHub →</a></div>
+      <div class="card" data-cat="badge"><h3>DEF CON Badges</h3><p>Creator of the first electronic badges for DEF CON. Electronic, interactive, and wildly collectible.</p><a href="https://grandideastudio.com/search/?q=defcon%20badge" target="_blank" class="btn" style="margin-top:10px">Browse badges →</a></div>
+      <div class="card" data-cat="talk"><h3>Talks & Library</h3><p>From Congress testimony at 22 to Hardwear.io masterclasses. Slides, notes, recordings.</p><a href="https://grandideastudio.com/portfolio/library/" target="_blank" class="btn" style="margin-top:10px">Library →</a></div>
+      <div class="card" data-cat="security"><h3>Training: Practical Hardware Hacking</h3><p>Hands-on bonus day — Hardwear.io NL 2026, Amsterdam. Fault injection, glitching, UART/JTAG hunting.</p><a href="https://hardwear.io/trainings/nl-2026/practical-hardware-hacking-basics-bonus-day-2026/" target="_blank" class="btn" style="margin-top:10px">Course info →</a></div>
+      <div class="card" data-cat="talk"><h3>Offspec.io</h3><p>Side-channel analysis platform co-founded by Joe. Independent hardware security community.</p><a href="https://offspec.io" target="_blank" class="btn" style="margin-top:10px">Visit →</a></div>
+    </div>
+  </div>
+
+  <section style="padding:18px 0 28px">
+    <div class="card" style="background:#111;color:#fff;border-color:#111;box-shadow:6px 6px 0 #000">
+      <h3 style="color:var(--yellow)">Independent Note</h3>
+      <p style="opacity:.9">This is a clean-room rebuild. Portfolio items link externally to Grand Idea Studio and GitHub. No proprietary backend or credentials were reused. Assets are used with placeholder equivalence where permission is unavailable.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="footer-inner">
+  <img class="footer-logo" src="../assets/death-logo.webp" alt="" width="360">
+  <div class="footer-copy">© <span id="year">2026</span> Joe Grand • <a href="../index.html">Back to Home</a> • <a href="../docs/ROUTE-INVENTORY.md">Docs</a></div>
+</div></footer>
+<div class="toast" id="toast"></div>
+<script src="../js/auth.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>

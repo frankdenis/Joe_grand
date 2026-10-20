@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Community — Official Discord • Joe Grand</title>
+<link rel="icon" href="../assets/favicon.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<nav class="top-nav"><div class="inner">
+  <a class="brand" href="../index.html"><span class="brand-dot"></span><span>JOE GRAND <b>• KINGPIN</b></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html#planet">Hacker Planet</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="community.html" class="active">Community</a></li>
+    <li><a href="../index.html#about">About</a></li>
+  </ul>
+  <div class="nav-actions"><button id="searchToggle">⌕</button><div data-auth-nav style="display:flex;gap:8px;align-items:center"></div><button class="hamburger" id="hamburger">☰</button></div>
+</div>
+<div class="search-bar" id="searchBar"><input id="searchInput" type="search" placeholder="Search community…"><button class="btn" onclick="document.getElementById('searchBar').classList.remove('open')">Close</button></div>
+</nav>
+<header class="page-hero">
+  <div class="container">
+    <div class="muted">Community • Discord • Training</div>
+    <h1>Stay Connected</h1>
+    <p>Hardware hackers, students, and the curious — swap tips, get teardown help, and be first to know about live streams and workshops.</p>
+  </div>
+</header>
+<main class="container">
+  <div class="content-grid">
+    <div>
+      <div class="card">
+        <h3>Official Discord</h3>
+        <p>Join <strong>~5k+ members</strong> discussing STM32 glitching, badge mods, and Hacker Planet field stories. Moderated, welcoming, no ego.</p>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+          <a class="btn btn--red" href="https://discord.com/invite/wud8KnF2Gm" target="_blank">Join via Invite →</a>
+          <a class="btn" href="https://discord.com/users/687727531511644274" target="_blank">Contact on Discord →</a>
+          <a class="btn" href="https://github.com/joegrand" target="_blank">GitHub →</a>
+        </div>
+        <div style="margin-top:14px;background:#f6ecd0;border:1.5px dashed #111;padding:10px;font-family:'Courier Prime',monospace;font-size:12px">
+          Discord widget embed would go here. Replace with your server’s widget URL or keep as invite link — no backend token required.
+        </div>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <h3>Newsletter & Shows</h3>
+        <p>Monthly field notes + early access to Hacker Planet rough cuts.</p>
+        <form onsubmit="event.preventDefault(); toast.textContent='Welcome! (demo)';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)" style="display:flex;gap:8px;margin-top:10px">
+          <input required type="email" placeholder="you@lab.example" style="flex:1;padding:10px;border:2px solid #111;font-family:'Courier Prime',monospace">
+          <button class="btn" style="background:#111;color:#fff;border-color:#111">Subscribe</button>
+        </form>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+          <a href="https://darknetdiaries.com/episode/155/" target="_blank" class="card" style="padding:12px;box-shadow:none"><strong>Listen:</strong> Darknet Diaries EP 155 — Kingpin</a>
+          <a href="https://hardwear.io/trainings/nl-2026/practical-hardware-hacking-basics-bonus-day-2026/" target="_blank" class="card" style="padding:12px;box-shadow:none"><strong>Training:</strong> Hardwear.io NL 2026</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Community Guidelines</h3>
+        <ul style="font-size:14px;line-height:1.6;margin-left:18px">
+          <li>Be kind, curious, and willing to share failures.</li>
+          <li>No doxxing, no stolen dump sales.</li>
+          <li>Teach one, learn one — answer a question when you can.</li>
+          <li>Respect the lab — safety first with high voltage.</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:14px;background:#111;color:#fff;border-color:#111">
+        <h3 style="color:var(--yellow)">Code of Conduct</h3>
+        <p style="opacity:.9;font-size:13px">This rebuild includes a placeholder Code of Conduct page. Replace with your community’s policy before going live.</p>
+        <a href="../docs/ROUTE-INVENTORY.md" class="btn" style="margin-top:10px;background:#fff;color:#111;border-color:#fff">View docs →</a>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <h3>Elsewhere</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px">
+          <a class="chip" href="https://x.com/joegrand" target="_blank">X / Twitter</a>
+          <a class="chip" href="https://www.instagram.com/joegrandofficial" target="_blank">Instagram</a>
+          <a class="chip" href="https://www.tiktok.com/@joegrandofficial" target="_blank">TikTok</a>
+          <a class="chip" href="https://chaos.social/@joegrand" target="_blank">Mastodon</a>
+          <a class="chip" href="https://bsky.app/profile/joegrand.bsky.social" target="_blank">Bluesky</a>
+          <a class="chip" href="https://www.threads.com/@joegrandofficial" target="_blank">Threads</a>
+          <a class="chip" href="https://www.facebook.com/joegrandofficial" target="_blank">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="height:24px"></p>
+</main>
+<footer class="site-footer"><div class="footer-inner"><img class="footer-logo" src="../assets/death-logo.webp" alt="" width="360"><div class="footer-copy">© 2026 Joe Grand • <a href="../index.html">Home</a></div></div></footer>
+<div class="toast" id="toast"></div>
+<script src="../js/auth.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
