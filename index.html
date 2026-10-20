@@ -18,6 +18,10 @@
 <meta name="twitter:image" content="https://frankdenis.github.io/Joe_grand/assets/tv-inner.jpg">
 <meta name="theme-color" content="#121212">
 <link rel="icon" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Rock+Salt&family=Special+Elite&family=Permanent+Marker&family=Open+Sans:wght@400;600;700&family=Courier+Prime:wght@400;700&family=Staatliches&display=swap">
+<link rel="preload" as="image" href="assets/tv-inner.jpg">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Joe Grand","alternateName":"Kingpin",
@@ -68,10 +72,10 @@
   <!-- HERO PHOTO -->
   <div class="hero-wrap reveal">
     <div class="hero-photo">
-      <img src="assets/tv-inner.jpg" alt="Joe Grand — B&W portrait in hacker space with beanie" width="1600" height="1067" loading="eager">
+      <img src="assets/tv-inner.jpg" alt="Joe Grand — B&W portrait in hacker space with beanie" width="1600" height="1067" loading="eager" fetchpriority="high">
       <div class="hero-caption">A new video series by Joe Grand that explores hacker culture, local flavor, and other interesting things around the world. Coming soon!</div>
     </div>
-    <img class="scribble-x" src="assets/scribble-x.png" alt="" aria-hidden="true">
+    <img class="scribble-x" src="assets/scribble-x.png" width="269" height="259" alt="" aria-hidden="true">
     <div style="text-align:center;margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
       <a href="https://www.youtube.com/watch?v=Rv668hG9UnY" target="_blank" rel="noopener" class="btn btn--yellow">Watch teaser: Cold Wallet trailer ↗</a>
       <a href="pages/community.html" class="btn">Get notified — free</a>
@@ -88,7 +92,7 @@
           <a class="poster-card" href="pages/projects.html" aria-label="Projects + Engineering — Grand Idea Studio">
             <div class="poster-kicker">Projects + Engineering</div>
             <div class="poster-title">Grand Idea Studio</div>
-            <div class="poster-img-wrap"><img class="poster-img" src="assets/gis.webp" alt="Grand Idea Studio hardware" width="800" height="800" loading="eager"></div>
+            <div class="poster-img-wrap"><img class="poster-img" src="assets/gis.webp" fetchpriority="low" alt="Grand Idea Studio hardware" width="800" height="800" loading="eager"></div>
             <div class="poster-cta"><span>Explore portfolio →</span><span aria-hidden="true">✦</span></div>
           </a>
         </div>
@@ -97,7 +101,7 @@
           <a class="poster-card" href="pages/videos.html" aria-label="Videos — YouTube">
             <div class="poster-kicker">Videos</div>
             <div class="poster-title">YouTube</div>
-            <div class="poster-img-wrap"><img class="poster-img" src="assets/youtube.webp" alt="Joe Grand YouTube channel" width="800" height="800" loading="eager"></div>
+            <div class="poster-img-wrap"><img class="poster-img" src="assets/youtube.webp" fetchpriority="low" alt="Joe Grand YouTube channel" width="800" height="800" loading="eager"></div>
             <div class="poster-cta"><span>Watch &amp; subscribe</span><span aria-hidden="true">▶</span></div>
           </a>
         </div>
@@ -106,7 +110,7 @@
           <a class="poster-card" href="pages/community.html" aria-label="Community — Official Discord">
             <div class="poster-kicker">Community</div>
             <div class="poster-title">Official Discord</div>
-            <div class="poster-img-wrap"><img class="poster-img" src="assets/discord.webp" alt="Joe Grand Discord community" width="800" height="800" loading="eager"></div>
+            <div class="poster-img-wrap"><img class="poster-img" src="assets/discord.webp" fetchpriority="low" alt="Joe Grand Discord community" width="800" height="800" loading="eager"></div>
             <div class="poster-cta"><span>Join the server</span><span aria-hidden="true">◐</span></div>
           </a>
         </div>
@@ -159,10 +163,10 @@
       <div class="bio-title">Joe <span>GRAnd</span></div>
       <div class="tv-wrap" style="position:relative;max-width:760px;margin:16px auto 0">
         <img src="assets/tv-inner.jpg" alt="Joe Grand at his workbench" style="position:absolute;left:10.8%;top:8%;width:78%;height:72%;object-fit:cover;object-position:center;border:2px solid #222;transform:rotate(-0.6deg)" loading="lazy">
-        <img class="tv-img" src="assets/television.png" alt="" aria-hidden="true" loading="lazy" width="1590" height="896" style="position:relative;z-index:2">
+        <img class="tv-img" src="assets/television.webp" alt="" aria-hidden="true" loading="lazy" width="1590" height="896" style="position:relative;z-index:2">
         <div class="tv-overlay" aria-hidden="true"></div>
       </div>
-      <img class="wave-scribble" src="assets/scribble-resistor.png" alt="" aria-hidden="true" loading="lazy">
+      <img class="wave-scribble" src="assets/scribble-resistor.png" width="648" height="259" alt="" aria-hidden="true" loading="lazy">
       <div class="bio-text">
         <p>Joe Grand, also known as <strong>Kingpin</strong>, is a computer engineer, hardware hacker, creator of the first electronic badges for <a href="https://defcon.org/" target="_blank" rel="noopener">DEF CON</a>, member of <a href="https://en.wikipedia.org/wiki/L0pht" target="_blank" rel="noopener">L0pht Heavy Industries</a>, and former technological juvenile delinquent. In 1998, at age 22, he testified before the US Senate about government computer security. He has created <a href="pages/projects.html">security tools</a>, <a href="pages/badges.html">conference badges</a>, <a href="pages/videos.html">videos</a>, <a href="pages/talks.html">talks</a>, and <a href="pages/training.html">training courses</a> that shaped hacker culture and hardware security.</p>
         <p style="margin-top:8px;opacity:.8">Portland, OR • Grand Idea Studio • offspec.io • Discovery Channel’s Prototype This! • Honorary Doctor (UAT) — exploring electronic systems since the 1980s.</p>
@@ -179,7 +183,7 @@
     <div class="container">
       <div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:center">
         <div>
-          <h3 style="font-family:'Anton',sans-serif;text-transform:uppercase;color:#111">Stay in the loop</h3>
+          <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;color:#111;margin:0">Stay in the loop</h2>
           <p style="font-family:'Courier Prime',monospace;font-size:12px;opacity:.75;margin-top:4px">Hacker Planet launch news and hardware stories — when the official list opens.</p>
         </div>
         <form class="jg-newsletter" style="display:flex;gap:8px;flex-wrap:wrap">
@@ -194,7 +198,7 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <img class="footer-logo" src="assets/death-logo.webp" alt="Joe Grand death-skull logo mark" width="360" loading="lazy">
+    <img class="footer-logo" src="assets/death-logo.webp" alt="Joe Grand death-skull logo mark" width="360" height="224" loading="lazy">
     <div class="social-grid">
       <a class="social-btn" id="copyEmail" href="mailto:contact@grandideastudio.com" aria-label="Email"><svg viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156C505 142 512 126.8 512 112c0-26.5-21.5-48-48-48H48zM0 196V384c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z"/></svg></a>
       <a class="social-btn" href="https://youtube.com/@JoeGrand" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 576 512"><path d="M549.7 124.1C543.5 100.4 524.9 81.8 501.4 75.5 458.9 64 288 64 288 64s-170.9 0-213.4 11.5c-23.5 6.3-42 24.2-48.3 47.8C15 167 15 256 15 256s0 89 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8 42.5 11.4 213.4 11.5 213.4 11.5s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V174l142.7 81.8-142.7 81.8z"/></svg></a>

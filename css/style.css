@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rock+Salt&family=Special+Elite&family=Permanent+Marker&family=Open+Sans:wght@400;600;700&family=Courier+Prime:wght@400;700&family=Staatliches&display=swap');
+600;700&family=Courier+Prime:wght@400;700&family=Staatliches&display=swap');
 
 :root{
   --bg:#0f0f0f;
@@ -413,3 +413,7 @@ code{ font-family:'Courier Prime',monospace;background:rgba(0,0,0,.07);padding:0
   .top-nav .nav-actions a{ padding:6px 8px!important; font-size:10px!important }
   .top-nav .nav-actions .btn{ white-space:nowrap }
 }
+/* Lighthouse a11y fix pass */
+.footer-copy{color:#beb6a6}
+.btn--pink{color:#111!important}
+.info-cell .info-label,.muted{color:#9a9a9a}
