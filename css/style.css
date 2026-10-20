@@ -417,3 +417,6 @@ code{ font-family:'Courier Prime',monospace;background:rgba(0,0,0,.07);padding:0
 .footer-copy{color:#beb6a6}
 .btn--pink{color:#111!important}
 .info-cell .info-label,.muted{color:#9a9a9a}
+/* reserve auth-nav space (anti-CLS hydration) */
+[data-auth-nav]{min-width:150px;min-height:34px;align-items:center}
+@media (max-width:520px){ [data-auth-nav]{min-width:120px} }
