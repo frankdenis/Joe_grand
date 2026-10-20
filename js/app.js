@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
-    document.querySelectorAll('.reveal').forEach(el=>{ el.style.willChange='transform, opacity'; obs.observe(el); });
+    document.querySelectorAll('.reveal').forEach(el=>{ el.classList.add('jswait'); el.style.willChange='transform, opacity'; obs.observe(el); });
   } else {
     document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
   }

@@ -306,7 +306,8 @@ a{color:inherit}
 
 .toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(80px);background:#111;color:#fff;padding:10px 14px;font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--yellow);box-shadow:0 12px 28px rgba(0,0,0,.45);opacity:0;transition:transform .35s, opacity .35s;z-index:100;max-width:90vw;text-align:center;pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-.reveal{opacity:0;transform:translateY(10px);transition:opacity .5s, transform .5s}
+.reveal{transition:opacity .5s, transform .5s}
+.reveal.jswait{opacity:0;transform:translateY(10px)}
 .reveal.in{opacity:1;transform:none}
 /* Auth & Admin */
 .auth-wrap{max-width:480px;margin:32px auto;padding:0 16px}
