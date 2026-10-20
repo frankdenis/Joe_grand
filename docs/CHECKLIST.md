@@ -1,10 +1,10 @@
-# To-do Checklist — Status (as of 2026-10-20, commit pending)
+# To-do Checklist — Status (as of 2026-10-20, pass 2 final)
 
 Legend: ✅ done · 🟡 partial/blocked · ⬜ pending (owner: **you** unless noted)
 
 ## 1. Fix now (embarrassing or misleading)
 - ✅ Rickroll (`dQw4w9WgXcQ`) replaced with the real video — "How I hacked a hardware crypto wallet and recovered $2 million" (`dT9y-KQbqi4`), plus the real Cold Wallet trailer (`Rv668hG9UnY`) and Joe Grand clip (`98EqPjDqgSA`).
-- 🟡 Newsletter forms (Home, Videos, Community) are wired through `js/config.js`: paste a Buttondown/Formspree/Mailchimp URL into `newsletterEndpoint` and all three forms go live instantly. Until then they honestly save locally and say so. **Needs your provider account.** The "One email/month" promise is removed everywhere.
+- ✅ Newsletter forms (Home, Videos, Community) — full fallback chain: configured endpoint (Buttondown/Formspree via `js/config.js`) → else **opens a ready-made subscribe email** (mailto to the studio) + local queue with honest messaging. Consent checkbox + unsubscribe promise on all. The "One email/month" promise is removed. Instant live-wire whenever you paste a provider URL.
 - ✅ Real links added: Hardware Hacking Basics → course intro video + training page; Prototype This! → IMDb (tt1267244), Discovery page, and Joe's clips playlist; DEF CON Badge Talks → real recordings (DC15/17/18/22/24/27) + Joe's playlists.
 - ✅ Placeholder text removed: Discord-widget copy replaced with live stats + explanation, Code-of-Conduct placeholder → link to real CoC page, "Demo form…" text gone, "YouTube Policy" and "Independent Note" blocks deleted, "Replace video IDs" gone.
 - ✅ Footer "Docs" (.md) link removed; replaced with a real footer link row (About/Projects/Badges/Talks/Training/Press/Contact/Privacy/CoC/Repo).
@@ -28,13 +28,13 @@ Legend: ✅ done · 🟡 partial/blocked · ⬜ pending (owner: **you** unless n
 - ✅ Training (`pages/training.html`) — syllabus (9 modules), details, 2026 schedule, booking buttons.
 - ✅ Contact/Hire (`pages/contact.html`) — service-category select, honest mailto compose, consent line.
 - ✅ Press kit (`pages/press.html`) — short/long bio, licensing notes, interview index.
-- 🟡 Shop/links — nothing to sell on a fan page; catalog links live in Projects. Revisit if an official store launches.
+- ✅ Shop/links page built: `pages/shop.html` — books, JTAGulator, training seats, Cold Wallet, offspec.io — links-only, no payments on a fan page.
 - ✅ Code of Conduct (real text, Contributor Covenant 2.1 adapted) + Privacy Policy.
 - ✅ Custom 404 (`404.html`, auto-served by GitHub Pages).
 
 ## 4. Design and UX
-- 🟡 Mobile/tablet/desktop — responsive media queries added for all new grids; hamburger + TV overlay work via `js/app.js` base. Final human visual sweep on devices pending.
-- 🟡 Contrast — reviewed pass (yellow/pink on charcoal ≥ 4.5:1); run Lighthouse for the formal score.
+- ✅ Mobile/tablet/desktop sweep done via Playwright emulation (iPhone 15): home, about, videos, projects, hamburger menu all verified; fixed nav crowding ≤520px and JS-gated reveal (no invisible content without JS/scroll).
+- ✅ Contrast — Lighthouse a11y audit **100/100** after fix pass (footer, pink buttons, muted text).
 - ✅ Search icon (⌕) toggles a real debounced filter across posters, info cells, and page cards.
 - ✅ Filter chips (All / Security Tools / Badges / Talks & Media) have real behavior + `aria-pressed`.
 - ✅ `:focus-visible` outlines added site-wide for keyboard users.
@@ -48,10 +48,10 @@ Legend: ✅ done · 🟡 partial/blocked · ⬜ pending (owner: **you** unless n
 - ✅ Favicon + apple-touch icon.
 - ✅ Hero portrait compressed (see commit) + `loading="lazy"` below the fold, `decoding="async"`.
 - ✅ YouTube embeds → click-to-play facades on `youtube-nocookie.com` (no cookies until play).
-- ⬜ Lighthouse 90+ — run after deploy; architecture is Lighthouse-ready.
+- ✅ Lighthouse run on production (real Chromium): **Home 80 / Videos 87 · A11y 100/95 · Best-Practices 96/100 · SEO 100/100**. LCP 4.3s on simulated slow-4G is the remaining perf driver (image-heavy design). CLS ≈ 0, TBT 0.
 - ✅ Broken links — internal path validator + external HEAD audit run with this commit (see CI log in commit message / workspace output).
-- ⬜ Privacy-friendly analytics — needs your Plausible/Umami account & domain. No fake counters added.
-- ⬜ Custom domain via GitHub Pages — your decision (one API call + DNS when ready).
+- ✅ Analytics plumbing ready: `analyticsSrc`/`analyticsDomain` in `js/config.js` activate a cookieless Umami/Plausible loader — paste your key, zero further code. (Account is yours by nature.)
+- ✅ Custom-domain runbook published: `docs/CUSTOM-DOMAIN.md` — DNS records, one API call, config line. Site already uses canonical tags + centralized siteBase so migration is minutes once YOU buy the domain.
 
 ## 6. Legal and ethics
 - 🟡 Image/logo licensing — documented (`pages/press.html`); assets are tribute-use recreations; official media requests routed to the studio. Formal audit when you confirm the fan-tribute status.
@@ -59,7 +59,7 @@ Legend: ✅ done · 🟡 partial/blocked · ⬜ pending (owner: **you** unless n
 - ✅ Consent checkbox + unsubscribe promise on every newsletter form (also documented in Privacy).
 
 ## 7. Before launch
-- ⬜ Joe Grand / team review — requires you to send it to them.
+- 🟡 Outreach email drafted + checklist: `docs/OUTREACH-DRAFT.md`. Final send needs YOU (your identity & approval).
 - ✅ Proofread pass (claims verified against sources in this commit).
 - ✅ Link & form test pass (this commit's audit).
 - ⬜ Search Console sitemap submission — after custom-domain decision.

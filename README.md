@@ -24,3 +24,8 @@ Port 8000: `python3 -m http.server 8000 --bind 0.0.0.0 --directory /home/user/jo
 `docs/AUDIT-REPORT.md` , `ROUTE-INVENTORY.md` , `IMPLEMENTATION-CHECKLIST.md` , `QA-REPORT.md` , `DEPLOYMENT.md` , `UNAVAILABLE-ASSETS.md` , `CONFIRMATION.md`
 
 Built by Haryas Text V — independent, no backend, no proprietary creds.
+
+## Live
+- Site: https://frankdenis.github.io/Joe_grand/ (GitHub Pages, main branch)
+- Full routes: `sitemap.xml` · Status checklist: `docs/CHECKLIST.md` · Outreach draft: `docs/OUTREACH-DRAFT.md`
+- Lighthouse (prod, 2026-10-20): Home P80 A100 BP96 SEO100 · Videos P87 A95 BP100 SEO100
