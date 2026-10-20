@@ -1,0 +1,181 @@
+- generic [active] [ref=e1]:
+  - navigation "Primary" [ref=e2]:
+    - generic [ref=e3]:
+      - link "JOE GRAND • KINGPIN" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+      - generic [ref=e7]:
+        - button "Search" [ref=e8] [cursor=pointer]: ⌕
+        - generic [ref=e9]:
+          - link "Sign In" [ref=e10] [cursor=pointer]:
+            - /url: pages/auth.html?mode=login
+          - link "Sign Up" [ref=e11] [cursor=pointer]:
+            - /url: pages/auth.html?mode=signup
+        - button "Menu" [ref=e12] [cursor=pointer]: ☰
+  - img "Joe Grand punk skull logo" [ref=e15]
+  - heading "HacKer pLANeT" [level=1] [ref=e17]
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - img "Joe Grand — B&W portrait in hacker space with beanie" [ref=e21]
+        - generic [ref=e22]: A new video series by Joe Grand that explores hacker culture, local flavor, and other interesting things around the world. Coming soon!
+      - generic [ref=e23]:
+        - 'link "Watch teaser: Cold Wallet trailer ↗" [ref=e24] [cursor=pointer]':
+          - /url: https://www.youtube.com/watch?v=Rv668hG9UnY
+        - link "Get notified — free" [ref=e25] [cursor=pointer]:
+          - /url: pages/community.html
+      - paragraph [ref=e26]:
+        - generic [ref=e27]: Unofficial fan-made tribute — not affiliated with Joe Grand or Grand Idea Studio. All videos, events, and products belong to their creators.
+    - generic [ref=e30]:
+      - link "Projects + Engineering — Grand Idea Studio" [ref=e33] [cursor=pointer]:
+        - /url: pages/projects.html
+        - generic [ref=e34]: Projects + Engineering
+        - generic [ref=e35]: Grand Idea Studio
+        - img "Grand Idea Studio hardware" [ref=e37]
+        - generic [ref=e38]:
+          - generic [ref=e39]: Explore portfolio →
+          - generic [aria-hidden] [ref=e40]: ✦
+      - link "Videos — YouTube" [ref=e43] [cursor=pointer]:
+        - /url: pages/videos.html
+        - generic [ref=e44]: Videos
+        - generic [ref=e45]: YouTube
+        - img "Joe Grand YouTube channel" [ref=e47]
+        - generic [ref=e48]:
+          - generic [ref=e49]: Watch & subscribe
+          - generic [aria-hidden] [ref=e50]: ▶
+      - link "Community — Official Discord" [ref=e53] [cursor=pointer]:
+        - /url: pages/community.html
+        - generic [ref=e54]: Community
+        - generic [ref=e55]: Official Discord
+        - img "Joe Grand Discord community" [ref=e57]
+        - generic [ref=e58]:
+          - generic [ref=e59]: Join the server
+          - generic [aria-hidden] [ref=e60]: ◐
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - link "Hardware Hacking STM32 Fault Injection Research + GitHub" [ref=e64] [cursor=pointer]:
+          - /url: pages/projects/stm32-fault-injection.html
+          - generic [ref=e65]: Hardware Hacking
+          - generic [ref=e66]: STM32 Fault Injection
+          - generic [ref=e67]: Research + GitHub
+        - link "training course Hardwear.io NL 2026 Amsterdam, The Netherlands" [ref=e68] [cursor=pointer]:
+          - /url: pages/training.html
+          - generic [ref=e69]: training course
+          - generic [ref=e70]: Hardwear.io NL 2026
+          - generic [ref=e71]: Amsterdam, The Netherlands
+        - link "information Wikipedia Joe Grand" [ref=e72] [cursor=pointer]:
+          - /url: https://en.wikipedia.org/wiki/Joe_Grand
+          - generic [ref=e73]: information
+          - generic [ref=e74]: Wikipedia
+          - generic [ref=e75]: Joe Grand
+        - link "Watch Cold Wallet Joe Grand Cameo!" [ref=e76] [cursor=pointer]:
+          - /url: https://wellgousa.com/films/cold-wallet
+          - generic [ref=e77]: Watch
+          - generic [ref=e78]: Cold Wallet
+          - generic [ref=e79]: Joe Grand Cameo!
+        - 'link "Listen Darknet Diaries Episode 155: Kingpin" [ref=e80] [cursor=pointer]':
+          - /url: https://darknetdiaries.com/episode/155/
+          - generic [ref=e81]: Listen
+          - generic [ref=e82]: Darknet Diaries
+          - generic [ref=e83]: "Episode 155: Kingpin"
+        - link "information IMDb Joe Grand" [ref=e84] [cursor=pointer]:
+          - /url: https://www.imdb.com/name/nm2706174/
+          - generic [ref=e85]: information
+          - generic [ref=e86]: IMDb
+          - generic [ref=e87]: Joe Grand
+      - paragraph [ref=e88]: Marked links open in a new tab • Everything else stays on this site
+    - generic [ref=e90]:
+      - generic [ref=e91]: Joe GRAnd
+      - img "Joe Grand at his workbench" [ref=e93]
+      - generic [ref=e96]:
+        - paragraph [ref=e97]:
+          - text: Joe Grand, also known as
+          - strong [ref=e98]: Kingpin
+          - text: ", is a computer engineer, hardware hacker, creator of the first electronic badges for"
+          - link "DEF CON" [ref=e99] [cursor=pointer]:
+            - /url: https://defcon.org/
+          - text: ", member of"
+          - link "L0pht Heavy Industries" [ref=e100] [cursor=pointer]:
+            - /url: https://en.wikipedia.org/wiki/L0pht
+          - text: ", and former technological juvenile delinquent. In 1998, at age 22, he testified before the US Senate about government computer security. He has created"
+          - link "security tools" [ref=e101] [cursor=pointer]:
+            - /url: pages/projects.html
+          - text: ","
+          - link "conference badges" [ref=e102] [cursor=pointer]:
+            - /url: pages/badges.html
+          - text: ","
+          - link "videos" [ref=e103] [cursor=pointer]:
+            - /url: pages/videos.html
+          - text: ","
+          - link "talks" [ref=e104] [cursor=pointer]:
+            - /url: pages/talks.html
+          - text: ", and"
+          - link "training courses" [ref=e105] [cursor=pointer]:
+            - /url: pages/training.html
+          - text: that shaped hacker culture and hardware security.
+        - paragraph [ref=e106]: Portland, OR • Grand Idea Studio • offspec.io • Discovery Channel’s Prototype This! • Honorary Doctor (UAT) — exploring electronic systems since the 1980s.
+      - generic [ref=e107]:
+        - link "Bio + Timeline" [ref=e108] [cursor=pointer]:
+          - /url: pages/about.html
+        - link "Latest Videos" [ref=e109] [cursor=pointer]:
+          - /url: pages/videos.html
+        - link "Contact" [ref=e110] [cursor=pointer]:
+          - /url: pages/contact.html
+    - generic [ref=e113]:
+      - generic [ref=e114]:
+        - heading "Stay in the loop" [level=3] [ref=e115]
+        - paragraph [ref=e116]: Hacker Planet launch news and hardware stories — when the official list opens.
+      - generic [ref=e117]:
+        - textbox "your@email.com" [ref=e118]
+        - button "Subscribe" [ref=e119] [cursor=pointer]
+        - generic [ref=e120] [cursor=pointer]:
+          - checkbox "I agree to receive occasional emails. Unsubscribe anytime." [ref=e121]
+          - text: I agree to receive occasional emails. Unsubscribe anytime.
+  - contentinfo [ref=e122]:
+    - generic [ref=e123]:
+      - img "Joe Grand death-skull logo mark"
+      - generic [ref=e124]:
+        - link "Email" [ref=e125] [cursor=pointer]:
+          - /url: mailto:contact@grandideastudio.com
+        - link "YouTube" [ref=e128] [cursor=pointer]:
+          - /url: https://youtube.com/@JoeGrand
+        - link "Discord" [ref=e131] [cursor=pointer]:
+          - /url: https://discord.com/invite/wud8KnF2Gm
+        - link "X / Twitter" [ref=e134] [cursor=pointer]:
+          - /url: https://x.com/joegrand
+        - link "Facebook" [ref=e137] [cursor=pointer]:
+          - /url: https://www.facebook.com/joegrandofficial
+        - link "Instagram" [ref=e140] [cursor=pointer]:
+          - /url: https://www.instagram.com/joegrandofficial
+        - link "Threads" [ref=e143] [cursor=pointer]:
+          - /url: https://www.threads.com/@joegrandofficial
+        - link "Mastodon" [ref=e146] [cursor=pointer]:
+          - /url: https://chaos.social/@joegrand
+        - link "Bluesky" [ref=e149] [cursor=pointer]:
+          - /url: https://bsky.app/profile/joegrand.bsky.social
+        - link "TikTok" [ref=e152] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@joegrandofficial
+        - link "GitHub" [ref=e155] [cursor=pointer]:
+          - /url: https://github.com/joegrand
+      - generic [ref=e158]:
+        - link "About" [ref=e159] [cursor=pointer]:
+          - /url: pages/about.html
+        - link "Projects" [ref=e160] [cursor=pointer]:
+          - /url: pages/projects.html
+        - link "Badges" [ref=e161] [cursor=pointer]:
+          - /url: pages/badges.html
+        - link "Talks" [ref=e162] [cursor=pointer]:
+          - /url: pages/talks.html
+        - link "Training" [ref=e163] [cursor=pointer]:
+          - /url: pages/training.html
+        - link "Press" [ref=e164] [cursor=pointer]:
+          - /url: pages/press.html
+        - link "Contact" [ref=e165] [cursor=pointer]:
+          - /url: pages/contact.html
+        - link "Privacy" [ref=e166] [cursor=pointer]:
+          - /url: pages/privacy.html
+        - link "Code of Conduct" [ref=e167] [cursor=pointer]:
+          - /url: pages/code-of-conduct.html
+        - link "Site repo ↗" [ref=e168] [cursor=pointer]:
+          - /url: https://github.com/frankdenis/Joe_grand
+      - generic [ref=e169]: © 2026 Joe Grand fan community • Unofficial tribute, no affiliation • Design language credited to the original by Doc4
+  - status
