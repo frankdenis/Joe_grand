@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JTAGulator — Project | Joe Grand | Fan Tribute</title>
+<meta name="description" content="JTAGulator: Joe Grand's open-source tool for discovering on-chip debug interfaces (JTAG, UART) on unknown hardware — debuted 2013. Specs, story, and resources.">
+<meta property="og:title" content="JTAGulator — Joe Grand project"><meta property="og:type" content="article">
+<meta property="og:image" content="https://frankdenis.github.io/Joe_grand/assets/tv-inner.jpg">
+<link rel="icon" href="../../assets/favicon.png"><link rel="apple-touch-icon" href="../../assets/favicon.png">
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<nav class="top-nav" aria-label="Primary"><div class="inner">
+  <a class="brand" href="../../index.html"><span class="brand-dot"></span><span>JOE GRAND <b style="color:var(--yellow)">• KINGPIN</b></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../projects.html" class="active">Projects</a></li>
+    <li><a href="../videos.html">Videos</a></li>
+    <li><a href="../community.html">Community</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions"><button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button></div>
+</div></nav>
+
+<header class="page-hero"><div class="container">
+  <div class="muted">Projects • Security tools • 2013</div>
+  <h1>JTAGulator</h1>
+  <p>Open-source hardware that answers the first question of every hardware hack: <em>where are the debug pins?</em></p>
+</div></header>
+
+<main class="container">
+  <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-top:18px" class="proj-grid">
+    <div>
+      <article class="card">
+        <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;margin:0 0 8px">Write-up</h2>
+        <p>Modern hardware almost always ships with a debug or programming interface — JTAG, SWD, UART — but manufacturers rarely label it, and it may not be populated with a header. Joe built the JTAGulator to automate the hunt: attach it to a row of candidate test points and it brute-forces combinations, checking for valid JTAG IDCODEs and live UART traffic, then tells you exactly which pins matter.</p>
+        <p>Released in 2013 and shown at Black Hat USA Arsenal 2014, the design is fully open source (OSHW) — schematics, firmware, and enclosure files included — and it became standard kit in hardware security labs worldwide. Its success is a big part of why "find the debug interface" is now step one of every hardware-hacking class, including his own.</p>
+        <h3 style="margin-top:12px">Key specs</h3>
+        <ul style="margin-left:18px;line-height:1.8;font-size:14px">
+          <li>24 independently adjustable I/O channels for probing unknown pinouts</li>
+          <li>Adjustable I/O voltage to match target logic levels</li>
+          <li>Detects JTAG chains (IDCODE) and UART connections with baud estimation</li>
+          <li>Completely open source — hardware, firmware, and software</li>
+          <li>Community accessories and clones documented across the ecosystem</li>
+        </ul>
+      </article>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Resources</h3>
+        <ul class="link-list" style="margin:8px 0 0 18px;font-size:14px;line-height:1.9">
+          <li><a href="https://grandideastudio.com/portfolio/security/" target="_blank" rel="noopener">Official portfolio (photos &amp; docs) ↗</a></li>
+          <li><a href="https://github.com/grandideastudio/jtagulator" target="_blank" rel="noopener">Source on GitHub ↗</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PLsyTdiI7kVn8H848lMSKljkUwPnZfke9k" target="_blank" rel="noopener">JTAGulator video playlist ↗</a></li>
+          <li><a href="https://blackhat.com/us-14/arsenal/Joe-Grand.html" target="_blank" rel="noopener">Black Hat USA 2014 Arsenal session ↗</a></li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <h3>Learn to use one</h3>
+        <p class="muted" style="font-size:13px">Debug-interface discovery is taught in <a href="../training.html">Hardware Hacking Basics</a>, plus the <a href="https://www.youtube.com/playlist?list=PLsyTdiI7kVn-r4CgzUCUVv-CNKY39FRt3" target="_blank" rel="noopener">Awesome Electronics Workshop</a> streams.</p>
+      </div>
+    </div>
+  </div>
+  <p style="height:28px"></p>
+</main>
+<footer class="site-footer"><div class="footer-inner">
+  <img class="footer-logo" src="../../assets/death-logo.webp" alt="" width="360" loading="lazy">
+  <div class="footer-links"><a href="../projects.html">All projects</a><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy</a></div>
+  <div class="footer-copy">© <span id="year">2026</span> Joe Grand fan community • Unofficial tribute.</div>
+</div></footer>
+<div class="toast" id="toast"></div>
+<script src="../../js/auth.js"></script><script src="../../js/config.js"></script><script src="../../js/app.js"></script>
+</body>
+</html>

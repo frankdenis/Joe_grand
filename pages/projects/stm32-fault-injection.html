@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STM32 Fault Injection — Project | Joe Grand | Fan Tribute</title>
+<meta name="description" content="STM32 fault injection: Joe Grand's open-source glitching framework, voltage-glitch tutorials, and datasets for defeating readout protection on STM32 microcontrollers.">
+<meta property="og:title" content="STM32 Fault Injection — Joe Grand project"><meta property="og:type" content="article">
+<meta property="og:image" content="https://frankdenis.github.io/Joe_grand/assets/tv-inner.jpg">
+<link rel="icon" href="../../assets/favicon.png"><link rel="apple-touch-icon" href="../../assets/favicon.png">
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<nav class="top-nav" aria-label="Primary"><div class="inner">
+  <a class="brand" href="../../index.html"><span class="brand-dot"></span><span>JOE GRAND <b style="color:var(--yellow)">• KINGPIN</b></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../projects.html" class="active">Projects</a></li>
+    <li><a href="../videos.html">Videos</a></li>
+    <li><a href="../community.html">Community</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions"><button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button></div>
+</div></nav>
+
+<header class="page-hero"><div class="container">
+  <div class="muted">Projects • Research • Fault injection</div>
+  <h1>STM32 fault injection</h1>
+  <p>Open-source glitching research: repeatable voltage-fault workflows for STM32 microcontrollers — the technique family behind the $2M wallet recovery.</p>
+</div></header>
+
+<main class="container">
+  <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-top:18px" class="proj-grid">
+    <div>
+      <article class="card">
+        <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;margin:0 0 8px">Write-up</h2>
+        <p>STM32 parts sit inside a huge share of embedded devices — including first-generation hardware crypto wallets. This research repository collects Joe's fault-injection work: glitch parameters, wiring notes, firmware dumps, and analysis showing how brief voltage disturbances can nudge an STM32 into misbehavior — historically downgrading read protection (RDP level 2 to 1) and exposing flash contents for recovery work.</p>
+        <p>Everything is published so other researchers can reproduce results on hardware they own: setup photographs, scripts, and measured traces, alongside pointers to the tooling (e.g., ChipWhisperer-class gear, crowbars, and controlled power). If you want the story version, the <a href="trezor-recovery.html">Trezor recovery write-up</a> shows this technique applied end-to-end on a real locked wallet.</p>
+        <h3 style="margin-top:12px">What's inside the repo</h3>
+        <ul style="margin-left:18px;line-height:1.8;font-size:14px">
+          <li>Glitching setup notes, wiring, and target preparation</li>
+          <li>Scripts and captured traces for parameter sweeps</li>
+          <li>Documented outcomes against read-protection states (for recovery on your own devices)</li>
+          <li>Links to related publications and talks</li>
+        </ul>
+        <p class="muted" style="font-size:12px;margin-top:10px">Published for research and recovery on devices you own or are authorized to assess.</p>
+      </article>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Resources</h3>
+        <ul class="link-list" style="margin:8px 0 0 18px;font-size:14px;line-height:1.9">
+          <li><a href="https://github.com/joegrand/stm32-fault-injection" target="_blank" rel="noopener">github.com/joegrand/stm32-fault-injection ↗</a></li>
+          <li><a href="trezor-recovery.html">Trezor One fault-injection recovery →</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PLsyTdiI7kVn9-Q4AiA6dKHXa6TNab9DjK" target="_blank" rel="noopener">Wallet Hacking playlist ↗</a></li>
+          <li><a href="https://nostarch.com/hardwarehacking" target="_blank" rel="noopener">The Hardware Hacking Handbook (chapter depth) ↗</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p style="height:28px"></p>
+</main>
+<footer class="site-footer"><div class="footer-inner">
+  <img class="footer-logo" src="../../assets/death-logo.webp" alt="" width="360" loading="lazy">
+  <div class="footer-links"><a href="../projects.html">All projects</a><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy</a></div>
+  <div class="footer-copy">© <span id="year">2026</span> Joe Grand fan community • Unofficial tribute.</div>
+</div></footer>
+<div class="toast" id="toast"></div>
+<script src="../../js/auth.js"></script><script src="../../js/config.js"></script><script src="../../js/app.js"></script>
+</body>
+</html>

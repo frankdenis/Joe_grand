@@ -2,66 +2,103 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Projects — Grand Idea Studio • Joe Grand</title>
-<link rel="icon" href="../assets/favicon.png">
+<title>Projects — Joe Grand | JTAGulator, Fault Injection, DEF CON Badges | Fan Tribute</title>
+<meta name="description" content="Joe Grand's projects: JTAGulator, STM32 fault injection, the $2M Trezor recovery, DEF CON badges, books, and training — with local write-ups and official external resources.">
+<meta property="og:title" content="Joe Grand — Projects"><meta property="og:type" content="website">
+<meta property="og:description" content="JTAGulator, STM32 fault injection, $2M Trezor recovery, DEF CON badges, and more.">
+<meta property="og:image" content="https://frankdenis.github.io/Joe_grand/assets/tv-inner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.png"><link rel="apple-touch-icon" href="../assets/favicon.png">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<nav class="top-nav"><div class="inner">
-  <a class="brand" href="../index.html"><span class="brand-dot"></span><span>JOE GRAND <b>• KINGPIN</b></span></a>
+<nav class="top-nav" aria-label="Primary"><div class="inner">
+  <a class="brand" href="../index.html"><span class="brand-dot"></span><span>JOE GRAND <b style="color:var(--yellow)">• KINGPIN</b></span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="../index.html">Home</a></li>
-    <li><a href="../index.html#planet">Hacker Planet</a></li>
     <li><a href="projects.html" class="active">Projects</a></li>
     <li><a href="videos.html">Videos</a></li>
     <li><a href="community.html">Community</a></li>
-    <li><a href="../index.html#about">About</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
-  <div class="nav-actions"><button id="searchToggle">⌕</button><div data-auth-nav style="display:flex;gap:8px;align-items:center"></div><button class="hamburger" id="hamburger">☰</button></div>
+  <div class="nav-actions"><button id="searchToggle" aria-label="Search">⌕</button><div data-auth-nav style="display:flex;gap:8px;align-items:center"></div><button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button></div>
 </div>
 <div class="search-bar" id="searchBar"><input id="searchInput" type="search" placeholder="Search projects…"><button class="btn" onclick="document.getElementById('searchBar').classList.remove('open')">Close</button></div>
 </nav>
 
 <header class="page-hero">
   <div class="container">
-    <div class="muted">Projects + Engineering • Est. 1998</div>
-    <h1>Grand Idea Studio</h1>
-    <p>Product design, hardware hacking tools, and security research that shaped a culture. Below is an independent showcase — all links to the original studio stay intact as external references.</p>
+    <div class="muted">Projects + Engineering • Grand Idea Studio</div>
+    <h1>Tools &amp; research</h1>
+    <p>Local write-ups for the flagships, external links for the rest of the catalog. Filters below are live — try them.</p>
   </div>
 </header>
 
 <main class="container">
-  <div class="filter-bar" style="margin-top:18px">
-    <button class="chip active" data-filter="all">All</button>
-    <button class="chip" data-filter="security">Security Tools</button>
-    <button class="chip" data-filter="badge">Badges</button>
-    <button class="chip" data-filter="talk">Talks</button>
-  </div>
-  <div class="content-grid" style="grid-template-columns:1fr">
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
-      <div class="card" data-cat="security"><h3>JTAGulator</h3><p>Open-source hardware for identifying JTAG / UART pins. Used worldwide in hardware security labs.</p><a href="https://grandideastudio.com/portfolio/security/" target="_blank" class="btn" style="margin-top:10px">View on GIS →</a></div>
-      <div class="card" data-cat="security"><h3>STM32 Fault Injection</h3><p>Glitching framework, tutorials, and open datasets. The site’s featured GitHub repo re-hosted as an external resource.</p><a href="https://github.com/joegrand/stm32-fault-injection" target="_blank" class="btn" style="margin-top:10px">GitHub →</a></div>
-      <div class="card" data-cat="badge"><h3>DEF CON Badges</h3><p>Creator of the first electronic badges for DEF CON. Electronic, interactive, and wildly collectible.</p><a href="https://grandideastudio.com/search/?q=defcon%20badge" target="_blank" class="btn" style="margin-top:10px">Browse badges →</a></div>
-      <div class="card" data-cat="talk"><h3>Talks & Library</h3><p>From Congress testimony at 22 to Hardwear.io masterclasses. Slides, notes, recordings.</p><a href="https://grandideastudio.com/portfolio/library/" target="_blank" class="btn" style="margin-top:10px">Library →</a></div>
-      <div class="card" data-cat="security"><h3>Training: Practical Hardware Hacking</h3><p>Hands-on bonus day — Hardwear.io NL 2026, Amsterdam. Fault injection, glitching, UART/JTAG hunting.</p><a href="https://hardwear.io/trainings/nl-2026/practical-hardware-hacking-basics-bonus-day-2026/" target="_blank" class="btn" style="margin-top:10px">Course info →</a></div>
-      <div class="card" data-cat="talk"><h3>Offspec.io</h3><p>Side-channel analysis platform co-founded by Joe. Independent hardware security community.</p><a href="https://offspec.io" target="_blank" class="btn" style="margin-top:10px">Visit →</a></div>
-    </div>
+  <div class="filter-bar" style="margin-top:18px" role="group" aria-label="Filter projects">
+    <button class="chip active" data-filter="all" aria-pressed="true">All</button>
+    <button class="chip" data-filter="security" aria-pressed="false">Security Tools</button>
+    <button class="chip" data-filter="badge" aria-pressed="false">Badges</button>
+    <button class="chip" data-filter="media" aria-pressed="false">Talks &amp; Media</button>
   </div>
 
-  <section style="padding:18px 0 28px">
-    <div class="card" style="background:#111;color:#fff;border-color:#111;box-shadow:6px 6px 0 #000">
-      <h3 style="color:var(--yellow)">Independent Note</h3>
-      <p style="opacity:.9">This is a clean-room rebuild. Portfolio items link externally to Grand Idea Studio and GitHub. No proprietary backend or credentials were reused. Assets are used with placeholder equivalence where permission is unavailable.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px" class="proj-grid3">
+    <div class="card" data-cat="security">
+      <div class="tl-date">2013 · Open source</div><h3>JTAGulator</h3>
+      <p>Brute-forces unknown pinouts to find on-chip debug interfaces. Standard kit in hardware labs worldwide.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn btn--yellow" href="projects/jtagulator.html">Write-up →</a><a class="btn" href="https://github.com/grandideastudio/jtagulator" target="_blank" rel="noopener">GitHub ↗</a></div>
     </div>
-  </section>
+    <div class="card" data-cat="security">
+      <div class="tl-date">Research repo</div><h3>STM32 Fault Injection</h3>
+      <p>Glitching framework, setup notes, and datasets — the technique behind the wallet recoveries.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn btn--yellow" href="projects/stm32-fault-injection.html">Write-up →</a><a class="btn" href="https://github.com/joegrand/stm32-fault-injection" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
+    <div class="card" data-cat="security">
+      <div class="tl-date">2022 · 6M+ views</div><h3>Trezor $2M Recovery</h3>
+      <p>Voltage-glitching a locked hardware wallet to recover $2M for its owners — the video that spawned offspec.io.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn btn--yellow" href="projects/trezor-recovery.html">Write-up →</a><a class="btn" href="https://www.youtube.com/watch?v=dT9y-KQbqi4" target="_blank" rel="noopener">Video ↗</a></div>
+    </div>
+    <div class="card" data-cat="badge">
+      <div class="tl-date">2006–2019</div><h3>DEF CON Badges</h3>
+      <p>Creator of DEF CON's first electronic badges (DC14–DC18) and the gemstone DC27 comeback.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn btn--yellow" href="badges.html">Badge gallery →</a><a class="btn" href="https://grandideastudio.com/search/?q=defcon+badge" target="_blank" rel="noopener">Official photos ↗</a></div>
+    </div>
+    <div class="card" data-cat="media">
+      <div class="tl-date">1998–2019</div><h3>Talks &amp; Publications</h3>
+      <p>From Senate testimony at 22 to DEF CON and two hardware-hacking books. Slides, recordings, dates.</p>
+      <a class="btn btn--yellow" href="talks.html" style="margin-top:10px">All talks →</a>
+    </div>
+    <div class="card" data-cat="media">
+      <div class="tl-date">Since 2005</div><h3>Hardware Hacking Training</h3>
+      <p>The industry's longest-running hardware class — next up: Hardwear.io NL 2026, Amsterdam.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn btn--yellow" href="training.html">Course page →</a><a class="btn" href="https://hardwear.io/trainings/nl-2026/practical-hardware-hacking-basics-bonus-day-2026/" target="_blank" rel="noopener">Book ↗</a></div>
+    </div>
+    <div class="card" data-cat="media">
+      <div class="tl-date">2008–2009 · Discovery</div><h3>Prototype This!</h3>
+      <p>Co-hosted invention show — 13 episodes of wild prototypes with Zoz Brooks, Mike North, Terry Sandin.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn" href="https://www.imdb.com/title/tt1267244/" target="_blank" rel="noopener">IMDb ↗</a><a class="btn" href="https://www.discovery.com/shows/prototype-this" target="_blank" rel="noopener">Discovery ↗</a></div>
+    </div>
+    <div class="card" data-cat="security">
+      <div class="tl-date">2021 · Co-founded</div><h3>offspec.io</h3>
+      <p>Legitimate recovery service for locked crypto and hardware wallets — born from the Trezor story.</p>
+      <a class="btn" href="https://offspec.io" target="_blank" rel="noopener" style="margin-top:10px">Visit offspec.io ↗</a>
+    </div>
+    <div class="card" data-cat="badge">
+      <div class="tl-date">Context</div><h3>Badge culture</h3>
+      <p>How one artistic electronic badge became a DEF CON institution — CSO's retrospective.</p>
+      <a class="btn" href="https://www.csoonline.com/article/2222890/kingpin-aka-joe-grand-of-prototype-this--the-birth-of-hardware-badge-hacking.html" target="_blank" rel="noopener" style="margin-top:10px">Read ↗</a>
+    </div>
+  </div>
+  <p style="height:28px"></p>
 </main>
 
 <footer class="site-footer"><div class="footer-inner">
-  <img class="footer-logo" src="../assets/death-logo.webp" alt="" width="360">
-  <div class="footer-copy">© <span id="year">2026</span> Joe Grand • <a href="../index.html">Back to Home</a> • <a href="../docs/ROUTE-INVENTORY.md">Docs</a></div>
+  <img class="footer-logo" src="../assets/death-logo.webp" alt="" width="360" loading="lazy">
+  <div class="footer-links"><a href="about.html">About</a><a href="talks.html">Talks</a><a href="training.html">Training</a><a href="press.html">Press</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="code-of-conduct.html">Code of Conduct</a></div>
+  <div class="footer-copy">© <span id="year">2026</span> Joe Grand fan community • Unofficial tribute — not affiliated with Joe Grand or Grand Idea Studio.</div>
 </div></footer>
 <div class="toast" id="toast"></div>
-<script src="../js/auth.js"></script>
-<script src="../js/app.js"></script>
+<script src="../js/auth.js"></script><script src="../js/config.js"></script><script src="../js/app.js"></script>
 </body>
 </html>

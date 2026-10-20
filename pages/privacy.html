@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy — Joe Grand Fan Tribute</title>
+<meta name="description" content="Privacy policy for this fan site: what is stored (only in your browser), no analytics or cookies, how YouTube embeds behave, and external-link notes.">
+<meta property="og:title" content="Privacy Policy — Joe Grand Fan Tribute"><meta property="og:type" content="website">
+<meta property="og:image" content="https://frankdenis.github.io/Joe_grand/assets/tv-inner.jpg">
+<link rel="icon" href="../assets/favicon.png"><link rel="apple-touch-icon" href="../assets/favicon.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<nav class="top-nav" aria-label="Primary"><div class="inner">
+  <a class="brand" href="../index.html"><span class="brand-dot"></span><span>JOE GRAND <b style="color:var(--yellow)">• KINGPIN</b></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions"><button id="searchToggle" aria-label="Search">⌕</button><div data-auth-nav style="display:flex;gap:8px;align-items:center"></div><button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button></div>
+</div>
+<div class="search-bar" id="searchBar"><input id="searchInput" type="search" placeholder="Search…"><button class="btn" onclick="document.getElementById('searchBar').classList.remove('open')">Close</button></div>
+</nav>
+
+<header class="page-hero"><div class="container">
+  <div class="muted">Legal • Privacy</div>
+  <h1>Privacy policy</h1>
+  <p>Short version: this static fan site has no server of its own, no cookies, and no analytics. Anything you type stays in your browser. Last updated: October 20, 2026.</p>
+</div></header>
+
+<main class="container">
+  <article class="card" style="margin-top:18px">
+    <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;margin:0 0 8px">What lives in your browser</h2>
+    <ul style="margin-left:18px;line-height:1.8;font-size:14px">
+      <li><strong>Accounts (demo):</strong> sign-up details you create on the <a href="auth.html">auth page</a> are stored only in your browser's localStorage (<code>jg_users</code>, <code>jg_session</code>) — never transmitted. The demo "OTP" codes appear on-screen; nothing is sent by SMS or email.</li>
+      <li><strong>Newsletter pending list:</strong> until the official signup service is connected, email addresses you enter into newsletter forms are stored only in your browser (<code>jg_newsletter_pending</code>) and you are told so when it happens.</li>
+      <li><strong>Admin edits:</strong> content overrides made in the admin dashboard are stored locally (<code>jg_site_data</code>). Clearing browser storage removes everything this site ever saved.</li>
+    </ul>
+
+    <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;margin:18px 0 8px">What we do not do</h2>
+    <ul style="margin-left:18px;line-height:1.8;font-size:14px">
+      <li>No analytics, tracking pixels, or advertising.</li>
+      <li>No third-party cookies set by this site.</li>
+      <li>No selling or sharing of personal data (there is no data to sell).</li>
+    </ul>
+
+    <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;margin:18px 0 8px">Third parties you may touch</h2>
+    <ul style="margin-left:18px;line-height:1.8;font-size:14px">
+      <li><strong>GitHub Pages</strong> hosts this site; GitHub may log standard request data (IP, user agent) under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</li>
+      <li><strong>YouTube embeds</strong> are click-to-play via <code>youtube-nocookie.com</code>: no Google connection — and no cookies — until you press the play button. After that, Google's policies apply.</li>
+      <li><strong>External links</strong> (grandideastudio.com, DEF CON, publishers, social networks) have their own policies once you leave this site.</li>
+    </ul>
+
+    <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;margin:18px 0 8px">Newsletter consent</h2>
+    <p>Newsletter forms include an explicit consent checkbox. When the official service (e.g., Buttondown) is connected, addresses will be submitted only after you tick that box, and every email includes an unsubscribe link.</p>
+
+    <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;margin:18px 0 8px">Questions</h2>
+    <p>Reach the maintainers via the <a href="contact.html">contact page</a>. Because data is only in your browser, "access/deletion requests" are handled by you: clear your browser storage.</p>
+  </article>
+  <p style="height:28px"></p>
+</main>
+<footer class="site-footer"><div class="footer-inner">
+  <img class="footer-logo" src="../assets/death-logo.webp" alt="" width="360" loading="lazy">
+  <div class="footer-links"><a href="about.html">About</a><a href="community.html">Community</a><a href="code-of-conduct.html">Code of Conduct</a><a href="contact.html">Contact</a></div>
+  <div class="footer-copy">© <span id="year">2026</span> Joe Grand fan community • Unofficial tribute — not affiliated with Joe Grand or Grand Idea Studio.</div>
+</div></footer>
+<div class="toast" id="toast"></div>
+<script src="../js/auth.js"></script><script src="../js/config.js"></script><script src="../js/app.js"></script>
+</body>
+</html>

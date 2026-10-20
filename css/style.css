@@ -375,3 +375,32 @@ a{color:inherit}
   .hero-caption{right:60px;font-size:10px}
   .punk-logo{width:min(260px, 72vw)}
 }
+
+/* ===== To-do pass additions ===== */
+:focus-visible{ outline:3px solid var(--yellow); outline-offset:2px; border-radius:2px }
+.card a:focus-visible,.btn:focus-visible,.chip:focus-visible{ outline-color:var(--yellow) }
+.footer-links{ display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;margin:10px 0;font-size:12px;font-family:'Courier Prime',monospace;text-transform:uppercase;letter-spacing:.06em }
+.footer-links a{ color:#d8cfc0;text-decoration:underline;text-underline-offset:3px }
+.footer-links a:hover{ color:var(--yellow) }
+.callout{ display:inline-block;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:.05em;border:1.5px dashed var(--yellow);color:var(--yellow);padding:7px 13px;margin:12px auto 0;line-height:1.5;max-width:640px }
+.consent-row{ display:flex;gap:8px;align-items:flex-start;font-family:'Courier Prime',monospace;font-size:11px;opacity:.85;width:100%;margin-top:6px;cursor:pointer }
+.consent-row input{ margin-top:2px;accent-color:#111;flex:none }
+.video-facade{ position:relative;aspect-ratio:16/9;background:#000;cursor:pointer;border:0;display:block;width:100%;overflow:hidden }
+.video-facade img{ width:100%;height:100%;object-fit:cover;display:block;opacity:.85;transition:opacity .2s,transform .3s }
+.video-facade:hover img,.video-facade:focus-visible img{ opacity:1;transform:scale(1.02) }
+.video-play{ position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;background:#e74040;color:#fff;border:3px solid #111;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;padding-left:6px;box-shadow:4px 4px 0 rgba(0,0,0,.5);pointer-events:none }
+.timeline{ list-style:none;margin:14px 0;padding-left:20px;border-left:2px dashed #111 }
+.tl-item{ margin:0 0 14px;position:relative;padding-left:14px;font-size:14px;line-height:1.6 }
+.tl-item::before{ content:'';position:absolute;left:-9px;top:6px;width:10px;height:10px;background:var(--pink,#ff86c8);border:2px solid #111;transform:rotate(45deg) }
+.tl-date{ font-family:'Courier Prime',monospace;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#555;margin-bottom:2px }
+.stat{ display:inline-block;font-family:'Courier Prime',monospace;font-size:12px;font-weight:700;border:2px solid #111;padding:5px 10px;margin:0 8px 6px 0;background:#f6ecd0;box-shadow:3px 3px 0 #111 }
+.link-list a{ text-decoration:underline;text-underline-offset:3px }
+code{ font-family:'Courier Prime',monospace;background:rgba(0,0,0,.07);padding:0 4px;font-size:.92em }
+@media (max-width:900px){
+  .videos-grid,.training-grid,.proj-grid,.contact-grid{ grid-template-columns:1fr!important }
+  .proj-grid3,.badge-grid{ grid-template-columns:1fr 1fr!important }
+}
+@media (max-width:560px){
+  .proj-grid3,.badge-grid,.talks-grid,.videos-grid-sm,.press-grid{ grid-template-columns:1fr!important }
+  .footer-links{ font-size:11px }
+}

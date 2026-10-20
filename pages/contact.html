@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact &amp; Hire Joe Grand — Security, Reverse Engineering, Product Design | Fan Tribute</title>
+<meta name="description" content="Reach Joe Grand / Grand Idea Studio for security assessments, hardware reverse engineering, product design, training, and speaking. Official channels only — this fan site stores nothing.">
+<meta property="og:title" content="Contact &amp; Hire Joe Grand"><meta property="og:type" content="website">
+<meta property="og:image" content="https://frankdenis.github.io/Joe_grand/assets/tv-inner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.png"><link rel="apple-touch-icon" href="../assets/favicon.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<nav class="top-nav" aria-label="Primary"><div class="inner">
+  <a class="brand" href="../index.html"><span class="brand-dot"></span><span>JOE GRAND <b style="color:var(--yellow)">• KINGPIN</b></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="nav-actions"><button id="searchToggle" aria-label="Search">⌕</button><div data-auth-nav style="display:flex;gap:8px;align-items:center"></div><button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button></div>
+</div>
+<div class="search-bar" id="searchBar"><input id="searchInput" type="search" placeholder="Search…"><button class="btn" onclick="document.getElementById('searchBar').classList.remove('open')">Close</button></div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <div class="muted">Contact • Hire • Speaking</div>
+    <h1>Start a conversation</h1>
+    <p>This fan site never stores your message. The form below opens your own email app addressed to Joe's official studio inbox — the channel his team actually reads.</p>
+  </div>
+</header>
+
+<main class="container">
+  <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-top:18px" class="contact-grid">
+    <div class="card">
+      <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;margin:0 0 6px">Project inquiry</h2>
+      <form id="contactForm">
+        <div class="form-group"><label for="cName">Name</label><input id="cName" class="form-input" type="text" autocomplete="name" required></div>
+        <div class="form-group"><label for="cEmail">Email</label><input id="cEmail" class="form-input" type="email" autocomplete="email" required></div>
+        <div class="form-group"><label for="cService">Service</label>
+          <select id="cService" class="form-input" required>
+            <option value="">Choose…</option>
+            <option>Security assessment</option>
+            <option>Reverse engineering</option>
+            <option>Product design / prototyping</option>
+            <option>Wallet / password recovery (offspec.io)</option>
+            <option>Training / workshop</option>
+            <option>Speaking or press</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="cMsg">Message</label><textarea id="cMsg" class="form-input" rows="5" required placeholder="What are you building or securing?"></textarea></div>
+        <label class="consent-row"><input type="checkbox" required> I understand this opens my email app and that no data is stored on this website.</label>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+          <button class="btn btn--pink" type="submit">Compose email →</button>
+          <a class="btn" href="mailto:contact@grandideastudio.com">contact@grandideastudio.com</a>
+        </div>
+      </form>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Official channels</h3>
+        <ul class="link-list" style="margin:8px 0 0 18px;font-size:14px;line-height:1.7">
+          <li><strong>Studio:</strong> <a href="https://grandideastudio.com" target="_blank" rel="noopener">grandideastudio.com</a></li>
+          <li><strong>Email:</strong> <a href="mailto:contact@grandideastudio.com">contact@grandideastudio.com</a></li>
+          <li><strong>Discord:</strong> <a href="https://discord.com/invite/wud8KnF2Gm" target="_blank" rel="noopener">Joe Grand's Official Server</a></li>
+          <li><strong>Training:</strong> <a href="training.html">upcoming courses</a></li>
+          <li><strong>Press:</strong> <a href="press.html">press kit</a></li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <h3>Response time</h3>
+        <p class="muted" style="font-size:13px">Joe runs a small studio — commercial inquiries are answered first. For hacking questions, the <a href="community.html">community Discord</a> is often faster.</p>
+      </div>
+    </div>
+  </div>
+  <p style="height:28px"></p>
+</main>
+<footer class="site-footer"><div class="footer-inner">
+  <img class="footer-logo" src="../assets/death-logo.webp" alt="" width="360" loading="lazy">
+  <div class="footer-links"><a href="about.html">About</a><a href="talks.html">Talks</a><a href="training.html">Training</a><a href="press.html">Press</a><a href="privacy.html">Privacy</a><a href="code-of-conduct.html">Code of Conduct</a></div>
+  <div class="footer-copy">© <span id="year">2026</span> Joe Grand fan community • Unofficial tribute — not affiliated with Joe Grand or Grand Idea Studio.</div>
+</div></footer>
+<div class="toast" id="toast"></div>
+<script src="../js/auth.js"></script><script src="../js/config.js"></script><script src="../js/app.js"></script>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var name=document.getElementById('cName').value.trim(),
+      email=document.getElementById('cEmail').value.trim(),
+      svc=document.getElementById('cService').value,
+      msg=document.getElementById('cMsg').value.trim();
+  var subject='[Site inquiry] '+svc+' — '+name;
+  var body='Name: '+name+'%0D%0AEmail: '+email+'%0D%0AService: '+svc+'%0D%0A%0D%0A'+encodeURIComponent(msg);
+  window.location.href='mailto:contact@grandideastudio.com?subject='+encodeURIComponent(subject)+'&body='+body;
+  if(window.showToast) showToast('Opening your email app…');
+});
+</script>
+</body>
+</html>

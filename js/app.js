@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBar = document.getElementById('searchBar');
   const searchInput = document.getElementById('searchInput');
   const toastEl = document.getElementById('toast');
+  const CFG = window.JG_CONFIG || {};
 
   // Fast toast
   function showToast(msg){
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toastEl.textContent = msg;
     toastEl.classList.add('show');
     clearTimeout(showToast._t);
-    showToast._t = setTimeout(()=>toastEl.classList.remove('show'),2600);
+    showToast._t = setTimeout(()=>toastEl.classList.remove('show'),3200);
   }
   window.showToast = showToast;
 
@@ -24,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ham.setAttribute('aria-expanded', String(open));
       if(open) ham.textContent='✕'; else ham.textContent='☰';
     }, {passive:true});
-    // close on outside click / escape
     document.addEventListener('click', (e)=>{
       if(!nav.contains(e.target) && !ham.contains(e.target) && nav.classList.contains('open')){
         nav.classList.remove('open'); ham.setAttribute('aria-expanded','false'); ham.textContent='☰';
@@ -39,34 +39,79 @@ document.addEventListener('DOMContentLoaded', () => {
   if(searchToggle && searchBar){
     searchToggle.addEventListener('click', ()=>{
       const open = searchBar.classList.toggle('open');
+      searchToggle.setAttribute('aria-expanded', String(open));
       if(open && searchInput) requestAnimationFrame(()=>searchInput.focus());
     }, {passive:true});
-    // click outside to close? keep open until close button
   }
 
-  // Debounce helper - fast scrolling/clicking improvement
+  // Debounce helper
   function debounce(fn, ms){ let t; return (...args)=>{ clearTimeout(t); t=setTimeout(()=>fn(...args), ms); }; }
 
-  // Search: debounced, filters posters and info cells - fast
+  // Search: debounced, filters posters, info cells, and page cards - fast
   if(searchInput){
     const doFilter = debounce(()=>{
       const q = searchInput.value.toLowerCase().trim();
-      const els = document.querySelectorAll('.poster-card, .info-cell');
-      // use rAF for batched DOM
+      const els = document.querySelectorAll('.poster-card, .info-cell, main .card');
       requestAnimationFrame(()=>{
         els.forEach(el=>{
           const text = (el.textContent||'').toLowerCase();
           el.style.display = (!q || text.includes(q)) ? '' : 'none';
-          if(!q) el.style.opacity='1';
         });
       });
-      if(q) showToast(`Filtering for: "${q}"`);
     }, 220);
     searchInput.addEventListener('input', doFilter, {passive:true});
     searchInput.addEventListener('keydown', e=>{
       if(e.key==='Escape'){ searchBar.classList.remove('open'); searchInput.value=''; doFilter(); }
     });
   }
+
+  // Newsletter forms — wired via js/config.js (Buttondown / Formspree / Mailchimp-ready).
+  // Until an endpoint is configured, addresses stay in the visitor's own browser — honestly.
+  document.querySelectorAll('form.jg-newsletter').forEach(f=>{
+    f.addEventListener('submit', async e=>{
+      e.preventDefault();
+      const emailEl = f.querySelector('input[type=email]');
+      const consent = f.querySelector('input[data-consent]');
+      if(consent && !consent.checked){ showToast('Please tick the consent box first.'); return; }
+      const val = (emailEl && emailEl.value || '').trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){ showToast('That email address looks off.'); return; }
+      if(CFG.newsletterEndpoint){
+        try{
+          const r = await fetch(CFG.newsletterEndpoint, {
+            method:'POST',
+            headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
+            body: JSON.stringify({ email: val })
+          });
+          if(r.ok){ showToast('Subscribed — check your inbox to confirm.'); f.reset(); return; }
+          showToast('The signup service hiccuped — try again in a moment.'); return;
+        }catch(_){ showToast('Network error — try again in a moment.'); return; }
+      }
+      // Local-only mode
+      try{
+        const list = JSON.parse(localStorage.getItem('jg_newsletter_pending')||'[]');
+        if(!list.some(x=>x.email===val)) list.push({ email: val, ts: Date.now() });
+        localStorage.setItem('jg_newsletter_pending', JSON.stringify(list));
+      }catch(_){}
+      showToast('Official list not live yet — saved in your browser only. No emails will be sent.');
+      f.reset();
+    });
+  });
+
+  // Click-to-play YouTube facades (youtube-nocookie; no cookies until play)
+  document.querySelectorAll('.video-facade').forEach(el=>{
+    const play = ()=>{
+      const id = el.dataset.video; if(!id) return;
+      const ifr = document.createElement('iframe');
+      ifr.className = 'video-embed';
+      ifr.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
+      ifr.title = el.getAttribute('aria-label') || 'YouTube video';
+      ifr.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      ifr.allowFullscreen = true;
+      el.replaceWith(ifr);
+    };
+    el.addEventListener('click', play);
+    el.addEventListener('keydown', e=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); play(); } });
+  });
 
   // Coming soon handler
   document.querySelectorAll('[data-comingsoon]').forEach(el=>{
@@ -79,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {passive:true});
   });
 
-  // Smooth scroll with offset - optimized with rAF and passive
+  // Smooth scroll with offset
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click', e=>{
       const id = a.getAttribute('href');
@@ -95,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Reveal on scroll - optimized: rootMargin, threshold, will-change
+  // Reveal on scroll - rAF + IntersectionObserver
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!prefersReduced && 'IntersectionObserver' in window){
     const obs = new IntersectionObserver((entries)=>{
@@ -115,25 +160,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const yEl = document.getElementById('year');
   if(yEl) yEl.textContent = new Date().getFullYear();
 
-  // Chips filter - fast delegated
+  // Chips filter with accessible pressed state
   const chips = document.querySelectorAll('.chip');
   if(chips.length){
     chips.forEach(ch=>{
       ch.addEventListener('click', ()=>{
         const group = ch.closest('.filter-bar') || document;
-        group.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
-        ch.classList.add('active');
+        group.querySelectorAll('.chip').forEach(c=>{ c.classList.remove('active'); c.setAttribute('aria-pressed','false'); });
+        ch.classList.add('active'); ch.setAttribute('aria-pressed','true');
         const filter = ch.dataset.filter;
+        if(!filter) return;
         requestAnimationFrame(()=>{
           document.querySelectorAll('[data-cat]').forEach(card=>{
-            card.style.display = (!filter || filter==='all' || card.dataset.cat===filter) ? '' : 'none';
+            card.style.display = (filter==='all' || card.dataset.cat===filter) ? '' : 'none';
           });
         });
       }, {passive:true});
     });
   }
 
-  // Copy email - fast
+  // Copy email
   const emailBtn = document.getElementById('copyEmail');
   if(emailBtn){
     emailBtn.addEventListener('click', e=>{
@@ -147,11 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Performance: lazy load non-critical images with loading="lazy" already set, but add decode async
+  // Decode async for lazy images
   document.querySelectorAll('img[loading="lazy"]').forEach(img=>{ img.decoding='async'; });
 
-  // Fast click: ensure no 300ms delay - CSS touch-action manipulation already via style
-  // Add passive scroll listener for header shadow
+  // Header shadow on scroll - passive + rAF
   let ticking=false;
   const topNav = document.querySelector('.top-nav');
   if(topNav){
@@ -167,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {passive:true});
   }
 
-  // Prefetch hover for internal pages - makes clicking feel instant
+  // Prefetch internal pages on hover
   document.querySelectorAll('a[href^="pages/"], a[href^="../"], a[href="index.html"]').forEach(a=>{
     let prefetched=false;
     a.addEventListener('mouseenter', ()=>{

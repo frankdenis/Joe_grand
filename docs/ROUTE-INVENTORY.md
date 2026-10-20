@@ -49,3 +49,14 @@ All new internal navigation uses relative URLs (`../index.html`, `pages/...`) an
 
 ## Assets
 Locally hosted in `/assets/` (downloaded from reference for faithful rebuild): header-paper.webp (663k), punk-logo.webp (143k), banner.webp (185k), gis/youtube/discord webp (257–663k), television.png (367k), tv-inner.jpg (590k), scribble-x/resistor, tape-one/two/three, death-logo.webp, favicon.png. No private credentials or proprietary backend reused.
+
+## To-do Pass (2026-10-20) — new routes
+- `/pages/about.html` — bio + verified timeline + Person schema
+- `/pages/talks.html` — talks, recordings, slides, publications
+- `/pages/training.html` — Hardware Hacking Basics syllabus + booking
+- `/pages/press.html` — press kit (bios, licensing, interview index)
+- `/pages/badges.html` — DEF CON badge gallery (DC14–DC18, DC27)
+- `/pages/contact.html` — hire form (service categories, mailto, consent)
+- `/pages/privacy.html` — privacy policy · `/pages/code-of-conduct.html` — real CoC
+- `/pages/projects/jtagulator.html` · `/stm32-fault-injection.html` · `/trezor-recovery.html`
+- `/404.html` (custom), `/sitemap.xml`, `/robots.txt`, `/js/config.js`

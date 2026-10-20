@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trezor $2M Recovery — Project | Joe Grand | Fan Tribute</title>
+<meta name="description" content="How Joe Grand fault-injected a locked Trezor One and recovered $2 million in cryptocurrency for its owners — the video, the technique, and the aftermath.">
+<meta property="og:title" content="Trezor $2M Recovery — Joe Grand project"><meta property="og:type" content="article">
+<meta property="og:image" content="https://frankdenis.github.io/Joe_grand/assets/tv-inner.jpg">
+<link rel="icon" href="../../assets/favicon.png"><link rel="apple-touch-icon" href="../../assets/favicon.png">
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<nav class="top-nav" aria-label="Primary"><div class="inner">
+  <a class="brand" href="../../index.html"><span class="brand-dot"></span><span>JOE GRAND <b style="color:var(--yellow)">• KINGPIN</b></span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../projects.html" class="active">Projects</a></li>
+    <li><a href="../videos.html">Videos</a></li>
+    <li><a href="../community.html">Community</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions"><button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button></div>
+</div></nav>
+
+<header class="page-hero"><div class="container">
+  <div class="muted">Projects • Recovery • January 2022</div>
+  <h1>The $2M Trezor recovery</h1>
+  <p>A locked wallet, old firmware, one shot. The hack that turned hardware wallet recovery into a business.</p>
+</div></header>
+
+<main class="container">
+  <div class="card" style="padding:0;overflow:hidden;margin-top:18px">
+    <div style="padding:14px 14px 10px"><h3 style="margin:0">How I hacked a hardware crypto wallet and recovered $2 million</h3>
+      <p class="muted" style="margin:4px 0 0">6M+ views · covered by The Verge (Jan 24, 2022)</p></div>
+    <div class="video-facade" data-video="dT9y-KQbqi4" role="button" tabindex="0" aria-label="Play: How I hacked a hardware crypto wallet and recovered $2 million">
+      <img src="https://i.ytimg.com/vi/dT9y-KQbqi4/hqdefault.jpg" alt="Video thumbnail: Joe Grand's $2M wallet recovery video" loading="lazy" decoding="async">
+      <span class="video-play" aria-hidden="true">▶</span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-top:16px" class="proj-grid">
+    <div>
+      <article class="card">
+        <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;margin:0 0 8px">Write-up</h2>
+        <p>In 2021 a friend group reached out after losing access to roughly $2 million in THETA held on a Trezor One — no PIN, no backup of the recovery seed. Joe's earlier research showed that certain STM32-based devices momentarily copy secrets into RAM during firmware updates; a carefully timed voltage glitch could force the chip to expose them.</p>
+        <p>The recovery took about three months of experimentation: X-raying and characterizing the device, building a glitching rig, reproducing existing research, then executing a single high-stakes run on the real wallet. The glitch worked — PIN and seed appeared on screen, and the funds were recovered. Trezor noted the specific weakness had been patched in 2017 after responsible disclosure, and that the attack requires full physical access — which is exactly why this scenario only happens in a lab, by consent, for owners locked out of their own devices.</p>
+        <p>The story is why Joe co-founded <a href="https://offspec.io" target="_blank" rel="noopener">offspec.io</a> in 2021: legitimate recovery work for people who have lost access to their own hardware and software wallets.</p>
+      </article>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Resources</h3>
+        <ul class="link-list" style="margin:8px 0 0 18px;font-size:14px;line-height:1.9">
+          <li><a href="https://www.youtube.com/watch?v=dT9y-KQbqi4" target="_blank" rel="noopener">Watch on YouTube ↗</a></li>
+          <li><a href="https://www.theverge.com/2022/1/24/22898712/crypto-hardware-wallet-hacking-lost-bitcoin-ethereum-nft" target="_blank" rel="noopener">The Verge coverage ↗</a></li>
+          <li><a href="https://grandideastudio.com/portfolio/security/trezor-one-fault-injection/" target="_blank" rel="noopener">Official project page ↗</a></li>
+          <li><a href="stm32-fault-injection.html">STM32 fault-injection research →</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PLsyTdiI7kVn9-Q4AiA6dKHXa6TNab9DjK" target="_blank" rel="noopener">Wallet Hacking playlist ↗</a></li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <h3>Locked out of your own wallet?</h3>
+        <p class="muted" style="font-size:13px"><a href="https://offspec.io" target="_blank" rel="noopener">offspec.io</a> handles legitimate recovery inquiries. Never send your seed to anyone claiming to "verify" it.</p>
+      </div>
+    </div>
+  </div>
+  <p style="height:28px"></p>
+</main>
+<footer class="site-footer"><div class="footer-inner">
+  <img class="footer-logo" src="../../assets/death-logo.webp" alt="" width="360" loading="lazy">
+  <div class="footer-links"><a href="../projects.html">All projects</a><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy</a></div>
+  <div class="footer-copy">© <span id="year">2026</span> Joe Grand fan community • Unofficial tribute.</div>
+</div></footer>
+<div class="toast" id="toast"></div>
+<script src="../../js/auth.js"></script><script src="../../js/config.js"></script><script src="../../js/app.js"></script>
+</body>
+</html>
