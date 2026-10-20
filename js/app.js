@@ -86,13 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
           showToast('The signup service hiccuped — try again in a moment.'); return;
         }catch(_){ showToast('Network error — try again in a moment.'); return; }
       }
-      // Local-only mode
+      // Local-only mode: save in this browser + open a ready-made subscribe email
       try{
         const list = JSON.parse(localStorage.getItem('jg_newsletter_pending')||'[]');
         if(!list.some(x=>x.email===val)) list.push({ email: val, ts: Date.now() });
         localStorage.setItem('jg_newsletter_pending', JSON.stringify(list));
       }catch(_){}
-      showToast('Official list not live yet — saved in your browser only. No emails will be sent.');
+      const subj = encodeURIComponent('Newsletter subscribe request');
+      const body = encodeURIComponent('Please add '+val+' to the Joe Grand / Hacker Planet newsletter list.\n\nSent from the fan-tribute site subscribe form. Consent was ticked: '+(consent && consent.checked ? 'yes':'no'));
+      showToast('Opening your email app — hit “send” to complete the subscribe request.');
+      window.location.href = 'mailto:contact@grandideastudio.com?subject='+subj+'&body='+body;
       f.reset();
     });
   });
@@ -224,5 +227,16 @@ document.addEventListener('DOMContentLoaded', () => {
       prefetched=true;
     }, {passive:true});
   });
+
+  // Privacy-friendly analytics (optional, cookieless — activates only when configured in js/config.js)
+  if(CFG.analyticsSrc){
+    try{
+      const s = document.createElement('script');
+      s.defer = true;
+      s.src = CFG.analyticsSrc;
+      if(CFG.analyticsDomain) s.setAttribute('data-website-id', CFG.analyticsDomain), s.setAttribute('data-domain', CFG.analyticsDomain);
+      document.head.appendChild(s);
+    }catch(_){}
+  }
 
 });
